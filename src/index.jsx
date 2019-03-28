@@ -2,15 +2,15 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import storeConfig from './redux/configStore';
+import Routes from './Route';
+import 'react-toastify/dist/ReactToastify.css';
+
 
 const store = storeConfig();
 
-const title = 'My Minimal React Webpack Babel Setup';
-
-
 render(
   <Provider store={store}>
-    <div>{title}</div>
+    <Routes />
   </Provider>,
   document.getElementById('app')
 );

@@ -1,0 +1,297 @@
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*Styling for the body background*/
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url('../../../public/img/background4.jpg');
+
+}
+
+h3 {
+  font-family: sofia;
+  font-size: 22px;
+  margin: 0px;
+}
+
+
+.whole {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.heroWhite {
+  display: block;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 50%;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+}
+
+.containerDemo {
+  width: 60%;
+}
+
+.password-error-message {
+  color: #FBE15D;
+}
+
+.red-bg {
+  border: 1px solid red;
+  background: #fed;
+}
+/* Set a style for all buttons */
+.loginButton,
+.signupButton {
+  background-color: rgba(0, 0, 0, 0.705);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 1rem;
+  outline:none;
+}
+
+.loginButton,
+.signupButton:hover {
+  opacity: 0.8;
+}
+
+/*Styling for the Footer section*/
+#bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer {
+  background-color: rgb(76, 70, 118);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#footerContent {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#terms {
+  float: left;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+
+#socialIcons {
+  float: right;
+  font-size: 0px;
+}
+
+#socialIcons a img {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 7px;
+}
+
+#license {
+  background-color: rgb(76, 70, 118);
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  align-content: center;
+  bottom: 0;
+}
+
+
+/* Styling the login/Signin container background */
+form div {
+  padding: 0px;
+}
+
+#register,
+#login {
+  margin: auto;
+  overflow: auto;
+  top: 0px;
+  width: 100%;
+  height: 60%;
+  padding: 1% 1% 1% 1%;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+input {
+  outline: none;
+}
+
+.to_register {
+  color: whitesmoke;
+}
+
+#loginBtn,
+#submitBtn {
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Styling for the username and password input fields */
+#username,
+.password,
+#confirmPassword,
+.email {
+  width: 100%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+/* #confirmPassword2{
+    margin: 90px 0px 0px 0px;
+  } */
+
+/*Styling for the Password Validation Message which pops out when writting password*/
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  opacity: 0.7;
+  float: left;
+  left: 54%;
+  width: 17%;
+  margin: 11% 40% 0% 5%;
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  padding: 1% 1% 1% 1%;
+}
+
+#message h3 {
+  text-align: left;
+  font-size: 18px;
+}
+
+span.notMember {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  text-align: center;
+  padding: 1%;
+  color: white;
+}
+
+.wrapper {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* Styling to add a green text color and a tick when the requirements are met */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -15px;
+  content: "✔";
+}
+
+.password {
+  content: "✔";
+  color: green;
+}
+
+/* Styling to add a green text color and an "✖"  when the requirements are not met */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -15px;
+  content: "✖";
+}
+
+#comparePassword {
+  padding-top: 5px;
+}
+
+
+/* Center the position of the login and signup header */
+.img_login {
+  text-align: center;
+  position: relative;
+  padding: 0px;
+  margin: 0px 0px;
+  height: 30px;
+}
+
+h1 {
+  margin: 0px;
+  color: #f1f1f1;
+}
+
+div {
+  color: #f1f1f1;
+}
+
+.loginParticulars {
+  padding: 10px;
+  text-align: left;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+
+  #register,
+  #login {
+    width: 50%;
+  }
+
+  .whole {
+    flex-direction: row;
+  }
+  .containerDemo {
+    width: 50%;
+  }
+}
+
+
+/* For tablets:
+    @media only screen and (min-width: 600px) {
+      #register, 
+      #login{
+            
+        margin: 5% 20% 0% 5%;
+        width: 60%;
+        height: 100%;
+         }
+    } */
