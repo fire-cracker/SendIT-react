@@ -1,0 +1,225 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the Landing Page Should render the landing page 1`] = `
+<ContextConsumer>
+  <Component />
+</ContextConsumer>
+`;
+
+exports[`Tests for the login Page Should render the login page 1`] = `
+<div
+  className="animate form"
+  id="login"
+>
+  <form
+    autoComplete="on"
+    className="login zoom"
+    id="LoginForm"
+  >
+    <div
+      className="img_login"
+    >
+      <h1>
+        Log in
+      </h1>
+    </div>
+    <div
+      className="loginParticulars"
+    >
+      <div>
+        <b>
+          Email Address
+        </b>
+      </div>
+      <small
+        className="password-error-message"
+      >
+         
+      </small>
+      <input
+        className="email "
+        id="loginEmail"
+        name="email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Enter Email Address"
+        type="text"
+        value=""
+      />
+      <div>
+        <b>
+          Password
+        </b>
+      </div>
+      <small
+        className="password-error-message"
+      >
+         
+      </small>
+      <input
+        className="password "
+        id="loginPassword"
+        name="password"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Enter Password"
+        type="password"
+        value=""
+      />
+      <div>
+        <input
+          className="showPassword"
+          id="loginShowPassword"
+          name="remember"
+          type="checkbox"
+        />
+        Show Password
+      </div>
+      <Button
+        className="loginButton"
+        disabled={true}
+        id="loginBtn"
+        onClick={[Function]}
+        type="submit"
+        value="Login"
+      />
+      <div
+        className="container"
+      >
+        <div
+          className="change_link"
+        >
+          Not a member yet ?
+          <a
+            className="to_register"
+            href="#toregister"
+            id="to_register"
+          >
+            Join us
+          </a>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+`;
+
+exports[`Tests for the signup Page Should render the signup page 1`] = `
+<div
+  className="animate form"
+  id="register"
+>
+  <form
+    autoComplete="on"
+    className=" login zoom"
+    id="signupForm"
+  >
+    <div
+      className="img_login"
+    >
+      <h1>
+         Sign up 
+      </h1>
+    </div>
+    <div
+      className="loginParticulars"
+    >
+      <div>
+        <b>
+          Username
+        </b>
+      </div>
+      <small
+        className="password-error-message"
+      >
+         
+      </small>
+      <input
+        className=""
+        id="username"
+        name="username"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Enter Username"
+        type="text"
+        value=""
+      />
+      <div
+        id="emaildiv"
+      >
+        <b>
+          Email Address
+        </b>
+      </div>
+      <small
+        className="password-error-message"
+      >
+         
+      </small>
+      <input
+        className="email "
+        id="email"
+        name="Email"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Enter Email Address"
+        type="text"
+        value=""
+      />
+      <div>
+        <b>
+          Password
+        </b>
+      </div>
+      <small
+        className="password-error-message"
+      >
+         
+      </small>
+      <input
+        className="password "
+        id="password"
+        name="password"
+        onBlur={[Function]}
+        onChange={[Function]}
+        placeholder="Enter Password"
+        type="password"
+        value=""
+      />
+    </div>
+    <div>
+      <input
+        className="showPassword"
+        id="showPassword"
+        name="remember"
+        type="checkbox"
+      />
+      Show Password
+    </div>
+    <Button
+      className="signupButton"
+      disabled={true}
+      id="submitBtn"
+      onClick={[Function]}
+      type="submit"
+      value="Sign up"
+    />
+    <div
+      className="container"
+    >
+      <div
+        className="change_link"
+      >
+        Already a member ?
+        <a
+          className="to_register"
+          href="#tologin"
+          id="to_login"
+        >
+          Go and log in
+        </a>
+      </div>
+    </div>
+  </form>
+</div>
+`;

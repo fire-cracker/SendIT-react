@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 const Button = ({
   submit,
   onClick,
-  isRequestSent,
+  disabled,
   value,
   className
 }) => (
@@ -12,7 +12,7 @@ const Button = ({
     type={submit}
     className={className}
     onClick={onClick}
-    disabled={isRequestSent}
+    disabled={disabled}
   >
     {value}
   </button>
@@ -21,14 +21,10 @@ const Button = ({
 Button.propTypes = {
   submit: PropTypes.string.isRequired,
   onClick: PropTypes.func,
-  isRequestSent: PropTypes.bool,
+  disabled: PropTypes.bool,
   value: PropTypes.string.isRequired,
   className: PropTypes.string.isRequired,
 };
 
-Button.defaultProps = {
-  onClick: '',
-  isRequestSent: false
-};
 
 export default Button;
