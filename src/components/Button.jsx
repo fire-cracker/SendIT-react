@@ -19,7 +19,7 @@ const Button = ({
 );
 
 Button.propTypes = {
-  submit: PropTypes.string.isRequired,
+  submit: PropTypes.string,
   onClick: PropTypes.func,
   disabled: PropTypes.bool,
   value: PropTypes.string.isRequired,

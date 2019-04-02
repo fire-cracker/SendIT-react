@@ -1,7 +1,12 @@
 import axios from '../../utils/axiosConfig';
-import { LOGIN_REQUEST, LOGIN_REQUEST_SUCCESS } from './actionTypes';
+import { LOGIN_REQUEST, LOGIN_REQUEST_SUCCESS, SET_LOGIN_STATE } from './actionTypes';
 
 const api = process.env.API_ROOT_URL;
+
+export const setLoggedInState = isLoggedIn => ({
+  type: SET_LOGIN_STATE,
+  payload: isLoggedIn
+});
 
 export const loginRequest = () => ({
   type: LOGIN_REQUEST

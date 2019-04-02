@@ -15,7 +15,6 @@ export class LandingPage extends Component {
     showPassword: false
   };
 
-
   toggleLoginSignup = () => {
     this.setState(prevState => ({
       showLogin: !prevState.showLogin
@@ -29,7 +28,7 @@ export class LandingPage extends Component {
   }
 
   render() {
-    const { login, signup } = this.props;
+    const { login, signup, history } = this.props;
     const { showLogin, showPassword } = this.state;
     return (
       <div className="whole">
@@ -50,6 +49,7 @@ export class LandingPage extends Component {
                 <LoginForm
                   toggleLoginSignup={this.toggleLoginSignup}
                   login={login}
+                  history={history}
                   showPassword={showPassword}
                   tooglePassword={this.tooglePassword}
                 />
@@ -58,6 +58,7 @@ export class LandingPage extends Component {
                 <SigninForm
                   toggleLoginSignup={this.toggleLoginSignup}
                   signup={signup}
+                  history={history}
                   showPassword={showPassword}
                   tooglePassword={this.tooglePassword}
                 />
@@ -71,9 +72,10 @@ export class LandingPage extends Component {
 }
 LandingPage.propTypes = {
   login: PropTypes.func,
-  signup: PropTypes.func
+  signup: PropTypes.func,
+  history: PropTypes.object
 };
-const mapStateToProps = ({ login }) => ({ login });
+const mapStateToProps = ({ login, signup }) => ({ login, signup });
 
 const mapDispatchToProps = ({
   login,

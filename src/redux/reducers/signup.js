@@ -5,7 +5,7 @@ import {
 
 
 const signupInitialState = {
-  tokenExist: false
+  isLoggedIn: false
 };
 export default (state = signupInitialState, action) => {
   switch (action.type) {
@@ -17,7 +17,7 @@ export default (state = signupInitialState, action) => {
     case SIGNUP_REQUEST_SUCCESS:
       return {
         ...state,
-        tokenExist: true
+        isLoggedIn: true
       };
 
     default:

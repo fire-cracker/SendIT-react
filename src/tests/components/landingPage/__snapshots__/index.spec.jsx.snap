@@ -1,9 +1,171 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for the Landing Page Should render the landing page 1`] = `
-<ContextConsumer>
-  <Component />
-</ContextConsumer>
+<LandingPage>
+  <div
+    className="whole"
+  >
+    <ToastContainer
+      autoClose={5000}
+      bodyClassName={null}
+      className={null}
+      closeButton={
+        <CloseButton
+          ariaLabel="close"
+        />
+      }
+      closeOnClick={true}
+      draggable={true}
+      draggablePercent={80}
+      hideProgressBar={false}
+      newestOnTop={false}
+      pauseOnFocusLoss={true}
+      pauseOnHover={true}
+      position="top-right"
+      progressClassName={null}
+      progressStyle={null}
+      rtl={false}
+      style={null}
+      toastClassName={null}
+      transition={[MockFunction]}
+    />
+    <div
+      className="heroWhite"
+      id="heroWhite"
+    >
+      <h1
+        className="hero"
+      >
+         A NEW WAY TO SEND
+      </h1>
+      <p
+        className="heroText"
+      >
+        We make millions of deliveries every day. But we deliver more than just packages. We deliver trust and peace of mind. You can SendIt and count on us!
+      </p>
+    </div>
+    <div
+      className="containerDemo"
+    >
+      <div
+        id="wrapper"
+      >
+        <Login
+          showPassword={false}
+          toggleLoginSignup={[Function]}
+          tooglePassword={[Function]}
+        >
+          <div
+            className="animate form"
+            id="login"
+          >
+            <form
+              autoComplete="on"
+              className="login zoom"
+              id="LoginForm"
+            >
+              <div
+                className="img_login"
+              >
+                <h1>
+                  Log in
+                </h1>
+              </div>
+              <div
+                className="loginParticulars"
+              >
+                <div>
+                  <b>
+                    Email Address
+                  </b>
+                </div>
+                <small
+                  className="password-error-message"
+                >
+                   
+                </small>
+                <input
+                  className="email "
+                  id="loginEmail"
+                  name="email"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter Email Address"
+                  type="text"
+                  value=""
+                />
+                <div>
+                  <b>
+                    Password
+                  </b>
+                </div>
+                <small
+                  className="password-error-message"
+                >
+                   
+                </small>
+                <input
+                  className="password "
+                  id="loginPassword"
+                  name="password"
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  placeholder="Enter Password"
+                  type="password"
+                  value=""
+                />
+                <div>
+                  <input
+                    checked={false}
+                    className="showPassword"
+                    id="loginShowPassword"
+                    name="remember"
+                    onChange={[Function]}
+                    type="checkbox"
+                  />
+                  Show Password
+                </div>
+                <Button
+                  className="loginButton"
+                  disabled={true}
+                  id="loginBtn"
+                  onClick={[Function]}
+                  type="submit"
+                  value="Login"
+                >
+                  <button
+                    className="loginButton"
+                    disabled={true}
+                    onClick={[Function]}
+                  >
+                    Login
+                  </button>
+                </Button>
+                <div
+                  className="container"
+                >
+                  <div
+                    className="change_link"
+                  >
+                    Not a member yet ?
+                    <a
+                      className="to_register"
+                      href="#toregister"
+                      id="to_register"
+                      onClick={[Function]}
+                    >
+                      Join us
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </Login>
+      </div>
+    </div>
+  </div>
+</LandingPage>
 `;
 
 exports[`Tests for the login Page Should render the login page 1`] = `

@@ -3,7 +3,7 @@ import { mount, shallow } from 'enzyme';
 import { toast } from 'react-toastify';
 import axios from '../../../utils/axiosConfig';
 
-import LandingPage from '../../../components/landingPage';
+import { LandingPage } from '../../../components/landingPage';
 import Login from '../../../components/landingPage/LoginForm';
 import Signup from '../../../components/landingPage/SignupForm';
 
@@ -21,9 +21,10 @@ beforeEach(() => {
 
 describe('Tests for the Landing Page', () => {
   it('Should render the landing page', () => {
-    wrapper = shallow(<LandingPage />);
+    wrapper = mount(<LandingPage />);
     expect(wrapper.length).toBe(1);
     expect(wrapper).toMatchSnapshot();
+    wrapper.find('a').at(0).simulate('click');
   });
 });
 describe('Tests for the login Page', () => {
@@ -123,7 +124,7 @@ describe('Tests for the login Page', () => {
         }
       }))
     };
-    wrapper = mount(<Login {...props} />);
+    wrapper = shallow(<Login {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.login);
@@ -137,7 +138,7 @@ describe('Tests for the login Page', () => {
         }
       }))
     };
-    wrapper = mount(<Login {...props} />);
+    wrapper = shallow(<Login {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.login);
@@ -151,16 +152,17 @@ describe('Tests for the login Page', () => {
         }
       }))
     };
-    wrapper = mount(<Login {...props} />);
+    wrapper = shallow(<Login {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.login);
   });
+
   it('should throw toast error for all other errors', async () => {
     const props = {
       login: jest.fn().mockImplementation(() => Promise.reject({}))
     };
-    wrapper = mount(<Login {...props} />);
+    wrapper = shallow(<Login {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.login);
@@ -274,7 +276,7 @@ describe('Tests for the signup Page', () => {
     const props = {
       signup: jest.fn().mockImplementation(() => Promise.reject({}))
     };
-    wrapper = mount(<Signup {...props} />);
+    wrapper = shallow(<Signup {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.signup);
@@ -288,7 +290,7 @@ describe('Tests for the signup Page', () => {
         }
       }))
     };
-    wrapper = mount(<Signup {...props} />);
+    wrapper = shallow(<Signup {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.signup);
@@ -302,7 +304,7 @@ describe('Tests for the signup Page', () => {
         }
       }))
     };
-    wrapper = mount(<Signup {...props} />);
+    wrapper = shallow(<Signup {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.signup);
@@ -316,7 +318,7 @@ describe('Tests for the signup Page', () => {
         }
       }))
     };
-    wrapper = mount(<Signup {...props} />);
+    wrapper = shallow(<Signup {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.signup);
@@ -329,7 +331,7 @@ describe('Tests for the signup Page', () => {
         }
       }))
     };
-    wrapper = mount(<Signup {...props} />);
+    wrapper = shallow(<Signup {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.signup);
@@ -338,7 +340,7 @@ describe('Tests for the signup Page', () => {
     const props = {
       signup: jest.fn().mockImplementation(() => Promise.reject({}))
     };
-    wrapper = mount(<Signup {...props} />);
+    wrapper = shallow(<Signup {...props} />);
 
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.signup);
