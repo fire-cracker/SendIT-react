@@ -1,0 +1,85 @@
+ /*Styling for the body background*/
+ body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+
+/* Styling the create Shipment Section */
+.shipmentOrder{
+  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url("../../../public/img/background3.jpg");
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width:100%;
+  min-height: 100vh;
+  padding-top: 10%;
+}
+
+.shipmentOrder>h1{
+  text-align: center;
+  color:white;
+}
+
+.createShipment{
+ width: 100%;
+}
+
+.fromform{
+  margin:auto;
+  width: 20%;
+  overflow: auto;
+  padding: 18px 4% 20px 4%;
+  border: 1px solid #888;
+  box-shadow:	
+      0pt 2px 5px rgba(105, 108, 109,  0.7),	
+      0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+  border-radius: 5px;	
+ 
+}
+
+.createShipmentParticulars{
+  padding: 10px;
+}
+
+.createShipmentParticulars>span{
+ color:white;
+}
+
+.createShipmentParticulars>input{
+color: white;
+width: 100%;
+padding: 5px 20px;
+display: inline-block;
+box-sizing: border-box;
+outline:none;
+font-size: 120%;
+background: transparent;
+}
+
+
+/* Turn off number input spinners */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+ -webkit-appearance: none; 
+ margin: 0; 
+}
+
+/* Set a style for all buttons */
+
+.createShipmentButton>button:hover {
+  opacity: 0.8;
+}
+.createShipmentButton>button {
+  padding: 1% 3%;
+  margin: 0% 0% 1% 80%;
+  border-radius: 10px;
+  font-size: 120%;
+  }
+ /* For desktop: */
+ @media only screen and (min-width: 768px) {
+  .fromform{
+     width: 40%;
+  }
+}

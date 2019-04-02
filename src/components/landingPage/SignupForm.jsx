@@ -125,6 +125,7 @@ export default class Signup extends Component {
 
   handleOnClickSignup = (e) => {
     e.preventDefault();
+    const { history } = this.props;
     const {
       username,
       email,
@@ -132,7 +133,9 @@ export default class Signup extends Component {
     } = this.state;
 
     this.props.signup({ username, email, password })
-      .then()
+      .then(() => {
+        history.push('/createOrder');
+      })
       .catch((error) => {
         const { response, response: { status, data } } = error;
         if (response && status === 400) {
@@ -282,5 +285,6 @@ Signup.propTypes = {
   toggleLoginSignup: PropTypes.func,
   tooglePassword: PropTypes.func,
   showPassword: PropTypes.bool,
-  signup: PropTypes.func
+  signup: PropTypes.func,
+  history: PropTypes.object
 };

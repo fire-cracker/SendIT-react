@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests for the Create Order Form Page Should render the Create Order Form page 1`] = `
+<div>
+  <div>
+    <Header />
+  </div>
+  <div
+    className="shipmentOrder"
+  >
+    <h1>
+       Create Shipment 
+    </h1>
+    <div
+      className="createShipment"
+    >
+      <form
+        autoComplete="on"
+        className="fromform"
+        id="fromform"
+      >
+        <div
+          className="createShipmentParticulars"
+        >
+          <span
+            className="addressLabel"
+          >
+            <b>
+              Pick Location
+            </b>
+          </span>
+          <small
+            className="password-error-message"
+          >
+             
+          </small>
+          <input
+            id="pickLocation"
+            name="address"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <span
+            className="emailLabel"
+          >
+            <b>
+              Destination
+            </b>
+          </span>
+          <small
+            className="password-error-message"
+          >
+             
+          </small>
+          <input
+            id="destination"
+            name="destination"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="text"
+            value=""
+          />
+          <span
+            className="weightLabel"
+          >
+            <b>
+              weight(kg) 
+            </b>
+          </span>
+          <small
+            className="password-error-message"
+          >
+             
+          </small>
+          <input
+            id="weight"
+            name="weight"
+            onBlur={[Function]}
+            onChange={[Function]}
+            type="number"
+            value=""
+          />
+        </div>
+        <div
+          className="createShipmentButton"
+        >
+          <Button
+            className="shipmentButton"
+            disabled={true}
+            onClick={[Function]}
+            type="submit"
+            value="submit"
+          />
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+`;

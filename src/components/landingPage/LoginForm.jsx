@@ -5,7 +5,7 @@ import { isAlphanumeric, isEmail } from 'validator';
 
 import Button from '../Button';
 
-export default class Login extends Component {
+class Login extends Component {
   state = {
     email: '',
     password: '',
@@ -91,9 +91,12 @@ export default class Login extends Component {
 
   handleOnClickLogin = (e) => {
     e.preventDefault();
+    const { history } = this.props;
     const { email, password } = this.state;
     this.props.login({ email, password })
-      .then()
+      .then(() => {
+        history.push('/createOrder');
+      })
       .catch((error) => {
         const { response, response: { status, data } } = error;
         if (response && status === 400) {
@@ -216,5 +219,8 @@ Login.propTypes = {
   toggleLoginSignup: PropTypes.func,
   tooglePassword: PropTypes.func,
   login: PropTypes.func,
-  showPassword: PropTypes.bool
+  showPassword: PropTypes.bool,
+  history: PropTypes.object
 };
+
+export default Login;

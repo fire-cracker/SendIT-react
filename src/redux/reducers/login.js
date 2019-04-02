@@ -1,14 +1,21 @@
 import {
   LOGIN_REQUEST,
-  LOGIN_REQUEST_SUCCESS
+  LOGIN_REQUEST_SUCCESS,
+  SET_LOGIN_STATE
 } from '../actions/actionTypes';
 
 
 const loginInitialState = {
-  tokenExist: false
+  isLoggedIn: false
 };
 export default (state = loginInitialState, action) => {
   switch (action.type) {
+    case SET_LOGIN_STATE:
+      return {
+        ...state,
+        isLoggedIn: action.payload,
+      };
+
     case LOGIN_REQUEST:
       return {
         ...state
@@ -17,7 +24,7 @@ export default (state = loginInitialState, action) => {
     case LOGIN_REQUEST_SUCCESS:
       return {
         ...state,
-        tokenExist: true
+        isLoggedIn: true
       };
 
     default:
