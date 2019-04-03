@@ -3,12 +3,12 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
 
-import { getOrder } from '../../redux/actions/track';
-import OrderEntries from './orderEntries';
+import { getAllOrders } from '../../redux/actions/admin';
+import OrderEntries from '../trackOrder/orderEntries';
 import Header from '../header';
 import './style.css';
 
-export class GetUserOrders extends Component {
+export class GetAllOrders extends Component {
   state = {
     showNew: false,
     showPending: true,
@@ -17,11 +17,11 @@ export class GetUserOrders extends Component {
   }
 
   componentDidMount() {
-    const { token } = localStorage;
-    const { userId } = JSON.parse(window.atob(token.split('.')[1]));
-    const { getOrder, orders } = this.props;
-    getOrder(userId)
-      .then(() => this.setState({ ordersToDisplay: orders.orders }))
+    const { getAllOrders, allOrders } = this.props;
+    getAllOrders()
+      .then(() => {
+        this.setState({ ordersToDisplay: allOrders.allOrders });
+      })
       .catch((error) => {
         const { response, response: { status } } = error;
         if (response && status === 401) {
@@ -32,8 +32,8 @@ export class GetUserOrders extends Component {
   }
 
   toggleDiv = (status, showingDiv) => {
-    const { orders: { orders } } = this.props;
-    const ordersToDisplay = orders.filter(order => order.orderStatus === status);
+    const { allOrders: { allOrders } } = this.props;
+    const ordersToDisplay = allOrders.filter(order => order.orderStatus === status);
     this.setState(() => ({
       showNew: true,
       showPending: true,
@@ -44,13 +44,14 @@ export class GetUserOrders extends Component {
   };
 
   render() {
-    const { orders: { orders } } = this.props;
+    const { allOrders: { allOrders } } = this.props;
     const {
       showNew, showPending, showDelivered, ordersToDisplay
     } = this.state;
+
     const orderEntries = ordersToDisplay.length
       ? ordersToDisplay
-      : orders.filter(order => order.orderStatus === 'New');
+      : allOrders.filter(order => order.orderStatus === 'New');
 
     return (
       <div>
@@ -114,14 +115,14 @@ export class GetUserOrders extends Component {
   }
 }
 
-GetUserOrders.propTypes = {
-  getOrder: PropTypes.func,
-  orders: PropTypes.object,
+GetAllOrders.propTypes = {
+  getAllOrders: PropTypes.func,
+  allOrders: PropTypes.object,
 };
-const mapStateToProps = ({ login, orders }) => ({ login, orders });
+const mapStateToProps = ({ login, allOrders }) => ({ login, allOrders });
 
 const mapDispatchToProps = ({
-  getOrder
+  getAllOrders
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(GetUserOrders);
+export default connect(mapStateToProps, mapDispatchToProps)(GetAllOrders);

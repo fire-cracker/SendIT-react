@@ -3,8 +3,8 @@ import { BrowserRouter } from 'react-router-dom';
 import { mount, shallow } from 'enzyme';
 import axios from '../../../utils/axiosConfig';
 
-import { GetUserOrders } from '../../../components/trackOrder/track';
-import { orders } from '../../mock/orders';
+import { GetAllOrders } from '../../../components/admin/AllOrders';
+import { allOrders } from '../../mock/orders';
 import OrderEntries from '../../../components/trackOrder/orderEntries';
 
 jest.mock('../../../utils/axiosConfig');
@@ -14,12 +14,12 @@ jest.mock('../../../redux/actions/createOrder');
 describe('Tests for the track Page', () => {
   const props = {
     getOrder: jest.fn().mockResolvedValue(true),
-    orders: { orders }
+    allOrders: { allOrders }
   };
   let wrapper;
   beforeEach(() => {
-    jest.spyOn(GetUserOrders.prototype, 'componentDidMount').mockImplementationOnce(() => true);
-    wrapper = mount(<BrowserRouter><GetUserOrders {...props} /></BrowserRouter>);
+    jest.spyOn(GetAllOrders.prototype, 'componentDidMount').mockImplementationOnce(() => true);
+    wrapper = mount(<BrowserRouter><GetAllOrders {...props} /></BrowserRouter>);
   });
   it('Should render the track page', () => {
     expect(wrapper.length).toBe(1);
@@ -30,7 +30,7 @@ describe('Tests for the track Page', () => {
   });
 
   it('should get order if request is  correct', () => {
-    const mocked = jest.spyOn(GetUserOrders.prototype, 'componentDidMount');
+    const mocked = jest.spyOn(GetAllOrders.prototype, 'componentDidMount');
     expect(mocked.mock.calls.length).toBe(2);
   });
 });

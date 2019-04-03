@@ -21,3 +21,16 @@ export const orders = [
     weight: '2'
   }
 ];
+
+export const allOrders = [
+  {
+    fromAddress: 'Oyedeji Haven, Jagun Old Ife Road Ibadan',
+    toAddress: 'Oyedeji Haven, Jagun Old Ife Road Ibadan',
+    weight: '2'
+  },
+  {
+    fromAddress: 'Oyedeji Haven, Jagun Old Ife Road Ibadan',
+    toAddress: 'Oyedeji Haven, Jagun Old Ife Road Ibadan',
+    weight: '2'
+  }
+];
