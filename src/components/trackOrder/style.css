@@ -1,0 +1,149 @@
+/* Styling the body background */
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  font-style: normal;
+  line-height: 1.5;
+  color: #232323;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+}
+h1{
+  text-align: center;
+  margin: auto;
+  width: 95%;
+  height: max-content;
+  color: black;
+  font-size: 100%;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Styling the Parcel delivery Orders Section background */
+#information{
+  height: max-content;
+  height: 100%;
+  width: 100%;
+}
+
+/* Styling the Table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Styling the Top background Section */
+#section3 {
+  height: 170px;
+  width: 100%;
+  /* background-image: url("img/background3.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Styling the Top nav Section */
+.navTabs {
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-bottom: none;
+  padding-top: 1rem!important;
+  margin-top: 3rem!important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navLink {
+  box-sizing: border-box;
+  color: #767676;
+  font-style: normal;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  margin: 0.4rem .8rem !important;
+  transition: color .3s;
+  border: 2px solid #767676;
+  border-radius: 100px !important;
+  font-family: 'Rubik', sans-serif;
+  display: block;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.navLink:hover, .navTabs>.active{
+  border: 2px solid #149dcc;
+  background: #149dcc;
+  color:white;
+}
+.delivered,.newPending{
+  display:none;
+}
+.newPending-active,.Delivered-active{
+  display:block;
+}
+
+/* Styling the Parcel delivery Orders Section */
+#informationFields{
+margin-top: 20px;
+height: max-content;
+text-align: left;
+}
+#preview{
+  margin: 10% 10% 0% 5%;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(51, 51, 51, 0);
+  text-align: left;  
+}
+#shipmentOrderPreview{
+margin: 2% 0% 0% 1%;
+overflow: auto;
+top: 0px;
+width: 90%;	
+height: 240px;
+padding: 0px 4% 0px 4%;
+border-bottom: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;	
+}
+#createShipmentPreview{
+  display:flex;
+  justify-content: space-between;
+  height: 240px;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 1200px) {
+#preview{
+      margin: 5% 10% 0% 5%;
+}
+h1{
+  font-size: 200%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#shipmentOrderPreview {
+  height: 190px;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 1199px)  {
+
+}

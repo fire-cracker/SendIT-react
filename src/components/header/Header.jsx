@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import PropTypes from 'prop-types';
 import { ToastContainer } from 'react-toastify';
 
 import './style.css';
@@ -44,12 +43,12 @@ render() {
             >
             Create Order
             </Link>
-            <a
+            <Link
               id="track"
-              onClick={this.handleNavTrack}
+              to="/track"
             >
             Track
-            </a>
+            </Link>
             <a
               className="icon"
               id="icon"
@@ -68,9 +67,5 @@ render() {
   );
 }
 }
-
-Header.propTypes = {
-  history: PropTypes.object
-};
 
 export default Header;

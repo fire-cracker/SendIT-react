@@ -13,7 +13,8 @@ export default (state = loginInitialState, action) => {
     case SET_LOGIN_STATE:
       return {
         ...state,
-        isLoggedIn: action.payload,
+        ...action.payload,
+        isLoggedIn: action.isLoggedIn,
       };
 
     case LOGIN_REQUEST:
@@ -24,6 +25,7 @@ export default (state = loginInitialState, action) => {
     case LOGIN_REQUEST_SUCCESS:
       return {
         ...state,
+        ...action.payload,
         isLoggedIn: true
       };
 
