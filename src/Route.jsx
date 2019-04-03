@@ -6,6 +6,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import LandingPage from './components/landingPage';
 import CreateOrder from './components/parcelForm/CreateOrder';
 import GetUserOrders from './components/trackOrder/track';
+import GetAllOrders from './components/admin/AllOrders';
 import { setLoggedInState } from './redux/actions/login';
 
 
@@ -39,6 +40,7 @@ class Routes extends Component {
             <Route exact path="/" component={LandingPage} />
             <Route path="/createOrder" component={CreateOrder} />
             <Route path="/track" component={GetUserOrders} />
+            <Route path="/admin" component={GetAllOrders} />
           </Switch>
         </div>
       </BrowserRouter>

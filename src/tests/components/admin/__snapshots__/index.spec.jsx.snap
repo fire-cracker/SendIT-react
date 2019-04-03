@@ -24,11 +24,10 @@ exports[`Tests for the track Page Should render the track page 1`] = `
       }
     }
   >
-    <GetUserOrders
-      getOrder={[MockFunction]}
-      orders={
+    <GetAllOrders
+      allOrders={
         Object {
-          "orders": Array [
+          "allOrders": Array [
             Object {
               "fromAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
               "toAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
@@ -42,6 +41,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
           ],
         }
       }
+      getOrder={[MockFunction]}
     >
       <div>
         <div>
@@ -235,7 +235,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
           </div>
         </div>
       </div>
-    </GetUserOrders>
+    </GetAllOrders>
   </Router>
 </BrowserRouter>
 `;
