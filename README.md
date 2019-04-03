@@ -1,6 +1,6 @@
 # SendIT
 
- [![Build Status](https://travis-ci.org/oyedejipeace/SendIT-react.svg?branch=develop)](https://travis-ci.org/oyedejipeace/SendIT-react)[![Test Coverage](https://api.codeclimate.com/v1/badges/1084a7543578780c4e77/test_coverage)](https://codeclimate.com/github/oyedejipeace/SendIT-react/test_coverage)[![Maintainability](https://api.codeclimate.com/v1/badges/1084a7543578780c4e77/maintainability)](https://codeclimate.com/github/oyedejipeace/SendIT-react/maintainability)
+ [![Build Status](https://travis-ci.org/oyedejipeace/SendIT-react.svg?branch=develop)](https://travis-ci.org/oyedejipeace/SendIT-react)[![Coverage Status](https://coveralls.io/repos/github/oyedejipeace/SendIT-react/badge.svg?branch=develop)](https://coveralls.io/github/oyedejipeace/SendIT-react?branch=develop)[![Maintainability](https://api.codeclimate.com/v1/badges/1084a7543578780c4e77/maintainability)](https://codeclimate.com/github/oyedejipeace/SendIT-react/maintainability)
 
 
 
