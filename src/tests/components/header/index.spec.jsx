@@ -17,7 +17,7 @@ describe('Tests for the Header', () => {
 
   it('Should call handle functions onclick', () => {
     const wrapper = shallow(<Header />);
-    wrapper.find('a').at(1).simulate('click');
+    wrapper.find('a').at(0).simulate('click');
     wrapper.unmount();
   });
 });

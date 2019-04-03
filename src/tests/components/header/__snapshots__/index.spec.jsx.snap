@@ -61,11 +61,13 @@ exports[`Tests for the Header Should render Header 1`] = `
         >
           Create Order
         </Link>
-        <a
+        <Link
           id="track"
+          replace={false}
+          to="/track"
         >
           Track
-        </a>
+        </Link>
         <a
           className="icon"
           id="icon"

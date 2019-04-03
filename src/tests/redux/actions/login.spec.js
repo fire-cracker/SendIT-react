@@ -30,7 +30,7 @@ describe('Article actions', () => {
     });
   });
 
-  it('Should dispatch success when create order is successful', () => {
+  it('Should dispatch success when login is successful', () => {
     const store = createMockStore({});
     store.dispatch(loginRequestSuccess());
     const [action] = store.getActions();
@@ -42,18 +42,20 @@ describe('Article actions', () => {
   it('Should dispatch login state when page is mounted', () => {
     const store = createMockStore({});
     const isLoggedIn = true;
-    store.dispatch(setLoggedInState(isLoggedIn));
+    const data = {};
+    store.dispatch(setLoggedInState(isLoggedIn, data));
     const [action] = store.getActions();
     expect(action).toEqual({
       type: 'SET_LOGIN_STATE',
-      payload: isLoggedIn
+      payload: data,
+      isLoggedIn
     });
   });
 
-  it('Should add comment when submit is clicked', async () => {
+  it('Should login when submit is clicked', async () => {
     axios.post.mockImplementationOnce(() => Promise.resolve({
       data: {
-        token: 'whatever'
+        token: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjQsInVzZXJOYW1lIjoib3llZGVqaXBlYWNlIiwidXNlckVtYWlsIjoib3llZGVqaXBlYWNlQHlhaG9vLmNvbSIsInVzZXJSb2xlIjoiVXNlciIsInVzZXJQYXNzd29yZCI6IiQyYSQxMCR5U3lSUG9lVFF4cGxmZzBkbnZZSWtPMlRINk1OWEZNM3JCbFcwcWZQclZzclhtQmZuenZjeSIsImlhdCI6MTU1NDI0MTI1NCwiZXhwIjoxNTU0MjQ0ODU0fQ.5Gzm9wrOZinLQrNQ1D3RdXqJAQINocuFfUDdJkCqwP8'
       }
     }));
     const expectedActions = [
@@ -61,8 +63,14 @@ describe('Article actions', () => {
         type: 'LOGIN_REQUEST'
       },
       {
-        type: 'LOGIN_REQUEST_SUCCESS'
-      }];
+        type: 'LOGIN_REQUEST_SUCCESS',
+        payload: {
+          userId: 4,
+          userName: 'oyedejipeace',
+          userRole: 'User',
+        }
+      }
+    ];
     await store.dispatch(login(user));
     expect(store.getActions()).toEqual(expectedActions);
   });

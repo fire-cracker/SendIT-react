@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 
 import LandingPage from './components/landingPage';
-import CreateOrder from './components/parcelForm/createOrder';
+import CreateOrder from './components/parcelForm/CreateOrder';
+import GetUserOrders from './components/trackOrder/track';
 import { setLoggedInState } from './redux/actions/login';
 
 
@@ -13,15 +14,16 @@ class Routes extends Component {
     if (localStorage.token) {
       const { token } = localStorage;
 
-      let userId;
+      let userId, userName, userRole, data;
       try {
-        ({ userId } = JSON.parse(window.atob(token.split('.')[1])));
+        ({ userId, userName, userRole } = JSON.parse(window.atob(token.split('.')[1])));
+        data = { userId, userName, userRole };
       } catch (error) {
         this.props.setLoggedInState(false);
       }
 
       if (userId) {
-        return this.props.setLoggedInState(true);
+        return this.props.setLoggedInState(true, data);
       }
       localStorage.clear();
     } else {
@@ -36,6 +38,7 @@ class Routes extends Component {
           <Switch>
             <Route exact path="/" component={LandingPage} />
             <Route path="/createOrder" component={CreateOrder} />
+            <Route path="/track" component={GetUserOrders} />
           </Switch>
         </div>
       </BrowserRouter>
@@ -50,7 +53,7 @@ Routes.propTypes = {
 const mapStateToProps = ({ login }) => ({ login });
 
 const mapDispatchToProps = dispatch => ({
-  setLoggedInState: isLoggedIn => dispatch(setLoggedInState(isLoggedIn)),
+  setLoggedInState: (isLoggedIn, data) => dispatch(setLoggedInState(isLoggedIn, data)),
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Routes);
