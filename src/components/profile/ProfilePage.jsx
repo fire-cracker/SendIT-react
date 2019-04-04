@@ -123,22 +123,24 @@ export class ProfilePage extends Component {
                 >
                   { orderEntries.length
                     ? (
-                      <table>
-                        <thead>
-                          <tr>
-                            <th>Pickup Location</th>
-                            <th>Destination</th>
-                            <th>weight(kg)</th>
-                            <th>Price</th>
-                            <th>Date of Order</th>
-                            <th>Status</th>
-                            {showPending ? null : (<th>PresentLocation</th>)}
-                          </tr>
+                      <div className="order-table">
+                        <table>
+                          <thead>
+                            <tr>
+                              <th>Pickup Location</th>
+                              <th>Destination</th>
+                              <th>weight(kg)</th>
+                              <th>Price</th>
+                              <th>Date of Order</th>
+                              <th>Status</th>
+                              {showPending ? null : (<th>PresentLocation</th>)}
+                            </tr>
 
-                          <OrderEntries showPending={showPending} orders={orderEntries} />
+                            <OrderEntries showPending={showPending} orders={orderEntries} />
 
-                        </thead>
-                      </table>
+                          </thead>
+                        </table>
+                      </div>
                     )
                     : (
                       <p className="no__order">No Order</p>

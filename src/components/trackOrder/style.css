@@ -65,8 +65,8 @@ tr:nth-child(even) {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   border-bottom: none;
-  padding-top: 1rem!important;
-  margin-top: 3rem!important;
+  /* padding-top: 1rem!important;
+  margin-top: 3rem!important; */
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;

@@ -125,7 +125,14 @@ onClickSubmit = (e) => {
   const { history } = this.props;
   const { pickupLocation, destination, weight } = this.state;
   this.props.addParcel({ pickupLocation, destination, weight })
-    .then()
+    .then(() => {
+      this.setState({
+        pickupLocation: '',
+        destination: '',
+        weight: ''
+      });
+      history.push('./track');
+    })
     .catch((error) => {
       const { response, response: { status, data } } = error;
       if (response && status === 400) {
@@ -140,11 +147,6 @@ onClickSubmit = (e) => {
       }
       toast.error('Unknown error');
     });
-  this.setState({
-    pickupLocation: '',
-    destination: '',
-    weight: ''
-  });
 }
 
 render() {
