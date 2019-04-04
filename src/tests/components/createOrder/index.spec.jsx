@@ -190,4 +190,21 @@ describe('Tests for the Create Order Form Page', () => {
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.addParcel);
   });
+  it('should throw toast error if error code is 401', async () => {
+    toast.error = jest.fn();
+    const props = {
+      addParcel: jest.fn().mockImplementation(() => Promise.reject({
+        response: {
+          status: 500
+        }
+      })),
+      login: {
+        isLoggedIn: true
+      }
+    };
+    wrapper = shallow(<CreateOrder {...props} />);
+
+    wrapper.find('Button').simulate('click', { preventDefault });
+    axios.post.mockResolvedValue(props.addParcel);
+  });
 });

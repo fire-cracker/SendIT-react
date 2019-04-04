@@ -17,7 +17,7 @@ export class GetAllOrders extends Component {
   }
 
   componentDidMount() {
-    const { getAllOrders, allOrders } = this.props;
+    const { getAllOrders, allOrders, history } = this.props;
     getAllOrders()
       .then(() => {
         this.setState({ ordersToDisplay: allOrders.allOrders });
@@ -25,10 +25,18 @@ export class GetAllOrders extends Component {
       .catch((error) => {
         const { response, response: { status } } = error;
         if (response && status === 401) {
+          history.push('/');
           return toast.error('Your session has expired. You need to login');
         }
         toast.error('Unknown error');
       });
+  }
+
+  componentDidUpdate() {
+    const { history, login: { isLoggedIn } } = this.props;
+    if (isLoggedIn === false) {
+      history.push('/');
+    }
   }
 
   toggleDiv = (status, showingDiv) => {
@@ -59,8 +67,8 @@ export class GetAllOrders extends Component {
           <Header />
         </div>
         <div id="informationFields">
-          <div id="preview">
-            <h1> Hi User! Track Your Orders </h1>
+          <div id="preview" className="preview">
+            <h1> Hi Admin! Track Your Orders </h1>
 
             <div className="navTabs" id="navTabs">
               <a
@@ -118,11 +126,13 @@ export class GetAllOrders extends Component {
 GetAllOrders.propTypes = {
   getAllOrders: PropTypes.func,
   allOrders: PropTypes.object,
+  history: PropTypes.object,
+  login: PropTypes.object
 };
 const mapStateToProps = ({ login, allOrders }) => ({ login, allOrders });
 
-const mapDispatchToProps = ({
+const mapDispatchToProps = {
   getAllOrders
-});
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(GetAllOrders);

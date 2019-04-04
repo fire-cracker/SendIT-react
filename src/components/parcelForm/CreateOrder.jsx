@@ -122,6 +122,7 @@ hasEmptyRequiredFields = () => {
 
 onClickSubmit = (e) => {
   e.preventDefault();
+  const { history } = this.props;
   const { pickupLocation, destination, weight } = this.state;
   this.props.addParcel({ pickupLocation, destination, weight })
     .then()
@@ -134,6 +135,7 @@ onClickSubmit = (e) => {
         return toast.error('You need to login to create an article');
       }
       if (response && status === 401) {
+        history.push('/');
         return toast.error('Your session has expired. You need to login');
       }
       toast.error('Unknown error');
@@ -158,7 +160,7 @@ render() {
   const buttonDisabled = this.hasFormErrors() || this.hasEmptyRequiredFields();
 
   return (
-    <div>
+    <div className="createOrder">
       <div>
         <Header />
       </div>

@@ -7,6 +7,7 @@ import LandingPage from './components/landingPage';
 import CreateOrder from './components/parcelForm/CreateOrder';
 import GetUserOrders from './components/trackOrder/track';
 import GetAllOrders from './components/admin/AllOrders';
+import ProfilePage from './components/profile/ProfilePage';
 import { setLoggedInState } from './redux/actions/login';
 
 
@@ -41,6 +42,7 @@ class Routes extends Component {
             <Route path="/createOrder" component={CreateOrder} />
             <Route path="/track" component={GetUserOrders} />
             <Route path="/admin" component={GetAllOrders} />
+            <Route path="/profile" component={ProfilePage} />
           </Switch>
         </div>
       </BrowserRouter>

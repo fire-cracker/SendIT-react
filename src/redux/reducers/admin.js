@@ -15,7 +15,7 @@ export default (state = orderInitialState, action) => {
       };
 
     case GET_ALL_ORDERS_SUCCESS: {
-      const { orders: { orders } } = action;
+      const { allOrders: { orders } } = action;
       return {
         ...state,
         allOrders: orders,

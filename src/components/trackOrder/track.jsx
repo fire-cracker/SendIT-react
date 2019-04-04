@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { toast } from 'react-toastify';
+import decodeJwt from 'jwt-decode';
 
 import { getOrder } from '../../redux/actions/track';
 import OrderEntries from './orderEntries';
@@ -18,17 +19,25 @@ export class GetUserOrders extends Component {
 
   componentDidMount() {
     const { token } = localStorage;
-    const { userId } = JSON.parse(window.atob(token.split('.')[1]));
-    const { getOrder, orders } = this.props;
+    const { userId } = decodeJwt(token);
+    const { getOrder, orders, history } = this.props;
     getOrder(userId)
       .then(() => this.setState({ ordersToDisplay: orders.orders }))
       .catch((error) => {
         const { response, response: { status } } = error;
         if (response && status === 401) {
+          history.push('/');
           return toast.error('Your session has expired. You need to login');
         }
         toast.error('Unknown error');
       });
+  }
+
+  componentDidUpdate() {
+    const { history, login: { isLoggedIn } } = this.props;
+    if (isLoggedIn === false) {
+      history.push('/');
+    }
   }
 
   toggleDiv = (status, showingDiv) => {
@@ -53,12 +62,12 @@ export class GetUserOrders extends Component {
       : orders.filter(order => order.orderStatus === 'New');
 
     return (
-      <div>
+      <div className="track">
         <div>
           <Header />
         </div>
         <div id="informationFields">
-          <div id="preview">
+          <div className="track--preview">
             <h1> Hi User! Track Your Orders </h1>
 
             <div className="navTabs" id="navTabs">
@@ -117,11 +126,13 @@ export class GetUserOrders extends Component {
 GetUserOrders.propTypes = {
   getOrder: PropTypes.func,
   orders: PropTypes.object,
+  history: PropTypes.object,
+  login: PropTypes.object
 };
 const mapStateToProps = ({ login, orders }) => ({ login, orders });
 
-const mapDispatchToProps = ({
+const mapDispatchToProps = {
   getOrder
-});
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(GetUserOrders);
