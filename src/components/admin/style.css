@@ -11,13 +11,13 @@ body {
   font-size: 1rem;
   font-weight: 400;
 }
-h1{
+.preview>h1{
   text-align: center;
   margin: auto;
   width: 95%;
   height: max-content;
   color: black;
-  font-size: 100%;
+  font-size: 2rem;
   border-radius: 5px;
   margin-bottom: 5px;
   font-weight: bold;

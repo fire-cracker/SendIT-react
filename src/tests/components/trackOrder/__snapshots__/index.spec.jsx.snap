@@ -1,21 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for the track Page Should render the track page 1`] = `
-<BrowserRouter>
+<MemoryRouter>
   <Router
     history={
       Object {
         "action": "POP",
         "block": [Function],
+        "canGo": [Function],
         "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "6nr84a",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
         "go": [Function],
         "goBack": [Function],
         "goForward": [Function],
+        "index": 0,
         "length": 1,
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "pathname": "/test.html",
+          "key": "6nr84a",
+          "pathname": "/",
           "search": "",
           "state": undefined,
         },
@@ -25,7 +37,26 @@ exports[`Tests for the track Page Should render the track page 1`] = `
     }
   >
     <GetUserOrders
-      getOrder={[MockFunction]}
+      getOrder={
+        [MockFunction] {
+          "calls": Array [
+            Array [
+              "chinchin",
+            ],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Promise {},
+            },
+          ],
+        }
+      }
+      login={
+        Object {
+          "isLoggedIn": true,
+        }
+      }
       orders={
         Object {
           "orders": Array [
@@ -43,7 +74,9 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         }
       }
     >
-      <div>
+      <div
+        className="track"
+      >
         <div>
           <Header>
             <div
@@ -167,7 +200,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
           id="informationFields"
         >
           <div
-            id="preview"
+            className="track--preview"
           >
             <h1>
                Hi User! Track Your Orders 
@@ -192,7 +225,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
                 className="navLink"
                 onClick={[Function]}
               >
-                DELIVERED ORDERS 
+                CANCELLED ORDERS 
               </a>
             </div>
             <div
@@ -202,34 +235,11 @@ exports[`Tests for the track Page Should render the track page 1`] = `
                 className="newPending-active"
                 id="shipmentOrder"
               >
-                <table>
-                  <thead>
-                    <tr>
-                      <th>
-                        Pickup Location
-                      </th>
-                      <th>
-                        Destination
-                      </th>
-                      <th>
-                        weight(kg)
-                      </th>
-                      <th>
-                        Price
-                      </th>
-                      <th>
-                        Date of Order
-                      </th>
-                      <th>
-                        Status
-                      </th>
-                    </tr>
-                    <OrderEntries
-                      orders={Array []}
-                      showPending={true}
-                    />
-                  </thead>
-                </table>
+                <p
+                  className="no__order"
+                >
+                  No Order
+                </p>
               </div>
             </div>
           </div>
@@ -237,5 +247,5 @@ exports[`Tests for the track Page Should render the track page 1`] = `
       </div>
     </GetUserOrders>
   </Router>
-</BrowserRouter>
+</MemoryRouter>
 `;

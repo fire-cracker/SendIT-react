@@ -1,7 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for the Create Order Form Page Should render the Create Order Form page 1`] = `
-<div>
+<div
+  className="createOrder"
+>
   <div>
     <Header />
   </div>

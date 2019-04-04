@@ -160,10 +160,13 @@ describe('Tests for the login Page', () => {
 
   it('should throw toast error for all other errors', async () => {
     const props = {
-      login: jest.fn().mockImplementation(() => Promise.reject({}))
+      login: jest.fn().mockImplementation(() => Promise.reject({
+        response: {
+          status: 500
+        }
+      }))
     };
     wrapper = shallow(<Login {...props} />);
-
     wrapper.find('Button').simulate('click', { preventDefault });
     axios.post.mockResolvedValue(props.login);
   });
@@ -338,7 +341,11 @@ describe('Tests for the signup Page', () => {
   });
   it('should throw toast error for all other errors', async () => {
     const props = {
-      signup: jest.fn().mockImplementation(() => Promise.reject({}))
+      signup: jest.fn().mockImplementation(() => Promise.reject({
+        response: {
+          status: 500
+        }
+      }))
     };
     wrapper = shallow(<Signup {...props} />);
 

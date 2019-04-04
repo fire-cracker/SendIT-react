@@ -1,0 +1,1503 @@
+html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/*Styling for the body background*/
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+.whole {
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(images/background4.jpg);
+}
+
+.whole h3 {
+  font-family: sofia;
+  font-size: 22px;
+  margin: 0px;
+}
+
+.heroWhite {
+  display: block;
+  color: white;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  width: 50%;
+  font-family: 'Rubik', sans-serif;
+  font-size: 1.5rem;
+}
+
+.containerDemo {
+  width: 60%;
+}
+
+.password-error-message {
+  color: #FBE15D;
+}
+
+.red-bg {
+  border: 1px solid red;
+  background: #fed;
+}
+/* Set a style for all buttons */
+.loginButton,
+.signupButton {
+  background-color: rgba(0, 0, 0, 0.705);
+  color: white;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 1rem;
+  outline:none;
+}
+
+.loginButton,
+.signupButton:hover {
+  opacity: 0.8;
+}
+
+/*Styling for the Footer section*/
+#bottom {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+footer {
+  background-color: rgb(76, 70, 118);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#footerContent {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+#terms {
+  float: left;
+  color: black;
+  font-size: 12px;
+  text-align: center;
+}
+
+#socialIcons {
+  float: right;
+  font-size: 0px;
+}
+
+#socialIcons a img {
+  padding-left: 5px;
+  padding-right: 5px;
+  margin-top: 7px;
+}
+
+#license {
+  background-color: rgb(76, 70, 118);
+  width: 100%;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  font-size: 15px;
+  text-align: center;
+  color: white;
+  align-content: center;
+  bottom: 0;
+}
+
+
+/* Styling the login/Signin container background */
+.animate>div {
+  padding: 0px;
+}
+
+#register,
+#login {
+  margin: auto;
+  overflow: auto;
+  top: 0px;
+  width: 100%;
+  height: 60%;
+  padding: 1% 1% 1% 1%;
+  border: 2px solid grey;
+  border-radius: 10px;
+}
+
+input {
+  outline: none;
+}
+
+.to_register {
+  color: whitesmoke;
+}
+
+#loginBtn,
+#submitBtn {
+  border-radius: 10px;
+  text-align: center;
+}
+
+/* Styling for the username and password input fields */
+#username,
+.password,
+#confirmPassword,
+.email {
+  width: 100%;
+  padding: 5px 20px;
+  margin: 8px 0;
+  height: 40px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+
+/* #confirmPassword2{
+    margin: 90px 0px 0px 0px;
+  } */
+
+/*Styling for the Password Validation Message which pops out when writting password*/
+#message {
+  display: none;
+  background: #f1f1f1;
+  color: #000;
+  opacity: 0.7;
+  float: left;
+  left: 54%;
+  width: 17%;
+  margin: 11% 40% 0% 5%;
+  overflow: auto;
+  position: fixed;
+  top: 0px;
+  padding: 1% 1% 1% 1%;
+}
+
+#message>h3 {
+  text-align: left;
+  font-size: 18px;
+}
+
+span.notMember {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 20px;
+}
+
+.container {
+  text-align: center;
+  padding: 1%;
+  color: white;
+}
+
+.wrapper {
+  width:100%;
+  display: flex;
+  flex-direction: row;
+
+}
+
+/* Styling to add a green text color and a tick when the requirements are met */
+.valid {
+  color: green;
+}
+
+.valid:before {
+  position: relative;
+  left: -15px;
+  content: "✔";
+}
+
+.password {
+  content: "✔";
+  color: green;
+}
+
+/* Styling to add a green text color and an "✖"  when the requirements are not met */
+.invalid {
+  color: red;
+}
+
+.invalid:before {
+  position: relative;
+  left: -15px;
+  content: "✖";
+}
+
+#comparePassword {
+  padding-top: 5px;
+}
+
+
+/* Center the position of the login and signup header */
+.img_login {
+  text-align: center;
+  position: relative;
+  padding: 0px;
+  margin: 0px 0px;
+  height: 30px;
+}
+
+.whole>h1 {
+  margin: 0px;
+  color: #f1f1f1;
+}
+
+.whole>div {
+  color: #f1f1f1;
+}
+
+.loginParticulars {
+  padding: 10px;
+  text-align: left;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+
+  #register,
+  #login {
+    width: 50%;
+  }
+
+  .whole {
+    flex-direction: row;
+  }
+  .containerDemo {
+    width: 50%;
+  }
+}
+
+
+/* For tablets:
+    @media only screen and (min-width: 600px) {
+      #register, 
+      #login{
+            
+        margin: 5% 20% 0% 5%;
+        width: 60%;
+        height: 100%;
+         }
+    } */
+/*Styling for the Navigation Section*/
+.navBar {
+  height: 50px;
+  align-content: center;
+  padding: 0px;
+  margin: 0px;
+  top: 0;
+  left: 0;
+  background-color: rgb(76, 70, 118);
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+
+.responsive--navBar {
+  height: 150px;
+  align-content: center;
+  padding: 0px;
+  margin: 0px;
+  top: 0;
+  left: 0;
+  background-color: rgb(76, 70, 118);
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+.navigation > a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  /* background-color: #333; */
+  font-size: 14px;
+  height: 18px;
+}
+
+#headerContent {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#headerLogo {
+  height: 10%;
+  width:10%;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  background: white;
+  border-radius: 50%;
+  float: left;
+  position:fixed;
+}
+
+.blink {
+  margin:0px 0px 0px 10px;
+  font-family: "Sofia";
+}
+
+.blink_caption {
+  color: white;
+  font-size: 24px;
+  float: left;
+  margin-top: 5px;
+}
+
+.responsive--blink_caption{
+  display: none;
+}
+
+#text {
+  opacity: 0.6;
+  font-family: "Sofia";
+  font-size: 18px;
+}
+
+#logout {
+  color:red;
+}
+.navigation a:hover {
+ text-decoration: underline solid white;
+  cursor: pointer;
+}
+
+#active {
+  text-decoration: underline;
+}
+
+.navigation a {display: none;}
+.navigation a.icon {
+    float: right;
+    display: block;
+}
+.navigation.responsive {position: relative;}
+.navigation.responsive .icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+.navigation.responsive a {
+    float: none;
+    display: block;
+    text-align: left;
+}
+/* For desktop: */
+@media only screen and (min-width: 768px) {
+  #admin,
+  #track,
+  #active,
+  #home,
+  #profile,
+  #signOut,
+  #logout {
+    border-width: 1px;
+    border-radius: 10px;
+    margin: 0.5% 0% 1% 0%;
+    font-size: 100%;
+  }
+  .navBar {
+    height: 50px;
+  }
+  .navigation a.icon {
+    display: none;
+  }
+  .navigation.responsive .icon {
+    display: none;
+  }
+
+  .navigation a:not(:last-child) {display: block;}
+  .navigation.responsive a {
+  float: right;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 8px;
+  text-decoration: none;
+  font-size: 14px;
+  height: 18px;
+}
+
+.responsive--navBar {
+  height: 50px;
+  align-content: center;
+  padding: 0px;
+  margin: 0px;
+  top: 0;
+  left: 0;
+  background-color: rgb(76, 70, 118);
+  position: fixed;
+  width: 100%;
+  overflow: hidden;
+}
+.responsive--blink_caption{
+  display: block;
+}
+}
+
+
+ /*Styling for the body background*/
+ body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+}
+
+/* Styling the create Shipment Section */
+.shipmentOrder{
+  background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(images/background3.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 100%;
+  width:100%;
+  min-height: 100vh;
+  padding-top: 10%;
+}
+
+.shipmentOrder>h1{
+  text-align: center;
+  color:white;
+}
+
+.createShipment{
+ width: 100%;
+}
+
+.fromform{
+  margin:auto;
+  width: 20%;
+  overflow: auto;
+  padding: 18px 4% 20px 4%;
+  border: 1px solid #888;
+  box-shadow:	
+      0pt 2px 5px rgba(105, 108, 109,  0.7),	
+      0px 0px 8px 5px rgba(208, 223, 226, 0.4) inset;
+  border-radius: 5px;	
+ 
+}
+
+.createShipmentParticulars{
+  padding: 10px;
+}
+
+.createShipmentParticulars>span{
+ color:white;
+}
+
+.createShipmentParticulars>input{
+color: white;
+width: 100%;
+padding: 5px 20px;
+display: inline-block;
+box-sizing: border-box;
+outline:none;
+font-size: 120%;
+background: transparent;
+}
+
+
+/* Turn off number input spinners */
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+ -webkit-appearance: none; 
+ margin: 0; 
+}
+
+/* Set a style for all buttons */
+
+.createShipmentButton>button:hover {
+  opacity: 0.8;
+}
+.createShipmentButton>button {
+  padding: 1% 3%;
+  margin: 0% 0% 1% 80%;
+  border-radius: 10px;
+  font-size: 120%;
+  }
+ /* For desktop: */
+ @media only screen and (min-width: 768px) {
+  .fromform{
+     width: 40%;
+  }
+}
+/* Styling the body background */
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  font-style: normal;
+  line-height: 1.5;
+  color: #232323;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+}
+.track--preview>h1{
+  text-align: center;
+  margin: auto;
+  width: 95%;
+  height: max-content;
+  color: black;
+  font-size: 2rem;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Styling the Parcel delivery Orders Section background */
+#information{
+  height: max-content;
+  height: 100%;
+  width: 100%;
+}
+
+/* Styling the Table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Styling the Top background Section */
+#section3 {
+  height: 170px;
+  width: 100%;
+  /* background-image: url("img/background3.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Styling the Top nav Section */
+.navTabs {
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-bottom: none;
+  padding-top: 1rem!important;
+  margin-top: 3rem!important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navLink {
+  box-sizing: border-box;
+  color: #767676;
+  font-style: normal;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  margin: 0.4rem .8rem !important;
+  transition: color .3s;
+  border: 2px solid #767676;
+  border-radius: 100px !important;
+  font-family: 'Rubik', sans-serif;
+  display: block;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.navLink:hover, .navTabs>.active{
+  border: 2px solid #149dcc;
+  background: #149dcc;
+  color:white;
+}
+.delivered,.newPending{
+  display:none;
+}
+.newPending-active,.Delivered-active{
+  display:block;
+}
+
+/* Styling the Parcel delivery Orders Section */
+#informationFields{
+margin-top: 20px;
+height: max-content;
+text-align: left;
+}
+.track--preview{
+  margin: 10% 10% 0% 5%;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(51, 51, 51, 0);
+  text-align: left;  
+}
+#shipmentOrderPreview{
+margin: 2% 0% 0% 1%;
+overflow: auto;
+top: 0px;
+width: 90%;	
+height: 240px;
+padding: 0px 4% 0px 4%;
+border-bottom: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;	
+}
+#createShipmentPreview{
+  display:flex;
+  justify-content: space-between;
+  height: 240px;
+}
+.red {
+  color: red;
+  font-size: 1.5rem;
+}
+.edit__button{
+  font-size: 1rem;
+}
+.no__order{
+  text-align: center;
+  font-size: 3rem;
+}
+/* For desktop: */
+@media only screen and (min-width: 1200px) {
+.track--preview{
+      margin: 5% 10% 0% 5%;
+}
+h1{
+  font-size: 200%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#shipmentOrderPreview {
+  height: 190px;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 1199px)  {
+
+}
+/* Styling the body background */
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  font-style: normal;
+  line-height: 1.5;
+  color: #232323;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+}
+.preview>h1{
+  text-align: center;
+  margin: auto;
+  width: 95%;
+  height: max-content;
+  color: black;
+  font-size: 2rem;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Styling the Parcel delivery Orders Section background */
+#information{
+  height: max-content;
+  height: 100%;
+  width: 100%;
+}
+
+/* Styling the Table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Styling the Top background Section */
+#section3 {
+  height: 170px;
+  width: 100%;
+  /* background-image: url("img/background3.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Styling the Top nav Section */
+.navTabs {
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-bottom: none;
+  padding-top: 1rem!important;
+  margin-top: 3rem!important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navLink {
+  box-sizing: border-box;
+  color: #767676;
+  font-style: normal;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  margin: 0.4rem .8rem !important;
+  transition: color .3s;
+  border: 2px solid #767676;
+  border-radius: 100px !important;
+  font-family: 'Rubik', sans-serif;
+  display: block;
+}
+a{
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+.navLink:hover, .navTabs>.active{
+  border: 2px solid #149dcc;
+  background: #149dcc;
+  color:white;
+}
+.delivered,.newPending{
+  display:none;
+}
+.newPending-active,.Delivered-active{
+  display:block;
+}
+
+/* Styling the Parcel delivery Orders Section */
+#informationFields{
+margin-top: 20px;
+height: max-content;
+text-align: left;
+}
+#preview{
+  margin: 10% 10% 0% 5%;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(51, 51, 51, 0);
+  text-align: left;  
+}
+#shipmentOrderPreview{
+margin: 2% 0% 0% 1%;
+overflow: auto;
+top: 0px;
+width: 90%;	
+height: 240px;
+padding: 0px 4% 0px 4%;
+border-bottom: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;	
+}
+#createShipmentPreview{
+  display:flex;
+  justify-content: space-between;
+  height: 240px;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 1200px) {
+#preview{
+      margin: 5% 10% 0% 5%;
+}
+h1{
+  font-size: 200%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#shipmentOrderPreview {
+  height: 190px;
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 1199px)  {
+
+}
+/* Styling the body background */
+body {
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  padding: 0px;
+  font-style: normal;
+  line-height: 1.5;
+  color: #232323;
+  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-size: 1rem;
+  font-weight: 400;
+}
+.profile__page h1{
+  text-align: center;
+  margin: auto;
+  width: 95%;
+  height: max-content;
+  color: black;
+  font-size: 2rem;
+  border-radius: 5px;
+  margin-bottom: 5px;
+  font-weight: bold;
+  padding: 10px;
+  font-family: 'Rubik', sans-serif;
+}
+
+/* Styling the Parcel delivery Orders Section background */
+#information{
+  height: max-content;
+  height: 100%;
+  width: 100%;
+}
+
+/* Styling the Table */
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: 3rem;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+
+/* Styling the Top background Section */
+#section3 {
+  height: 170px;
+  width: 100%;
+  /* background-image: url("img/background3.jpg"); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+/* Styling the Top nav Section */
+.navTabs {
+  display: -webkit-flex;
+  justify-content: center;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  border-bottom: none;
+  padding-top: 1rem!important;
+  margin-top: 3rem!important;
+  padding-left: 0;
+  margin-bottom: 0;
+  list-style: none;
+}
+.navLink {
+  box-sizing: border-box;
+  color: #767676;
+  font-style: normal;
+  font-weight: 500;
+  padding: 1rem 3rem;
+  margin: 0.4rem .8rem !important;
+  transition: color .3s;
+  border: 2px solid #767676;
+  border-radius: 100px !important;
+  font-family: 'Rubik', sans-serif;
+  display: block;
+}
+
+a{
+  text-decoration: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+.navLink:hover, .navTabs>.active{
+  border: 2px solid #149dcc;
+  background: #149dcc;
+  color:white;
+}
+
+.delivered,.newPending{
+  display:none;
+}
+
+.newPending-active,.Delivered-active{
+  display:block;
+}
+
+/* Styling the profile Section */
+.createAshipment{
+  padding-top: 2rem;
+  margin: 8% 0% 0% 0%;
+  position:auto;
+  display:block;
+  height: 160px;
+}
+
+/* Styling the Delivered and Pending Parcel Delivery Order Section */
+.profileDetails{
+  text-align: center;
+  margin:0% 10% 0% 0%;
+  overflow: auto;
+  top: 0px;
+  padding: 18px 4% 20px 4%; 
+  display:flex;  	
+  justify-content: space-between;
+}
+.column{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  flex-flow: row wrap;
+}
+.row1{
+  border-radius: 30px 30px 30px 30px;	
+  box-shadow:	5px 5px rgb(50, 42, 127);
+  height:80px;
+  width: 25rem;
+  margin-bottom: 1rem;
+}
+.row2{
+  border-radius: 30px 30px 30px 30px;	
+  box-shadow:	5px 5px rgb(50, 42, 127);
+  height:80px;
+  width: 25rem;
+}
+.row1>h2 {
+  margin: 0% 0% 0% 0%;
+  padding: 2% 2% 2% 0%;
+  color: black;
+}
+.row2>h2 {
+  margin: 0% 0% 0% 0%;
+  padding: 2% 2% 2% 0%;
+  color: black;
+}
+/* Styling the Parcel delivery Orders Section */
+#informationFields{
+padding-top: 2rem;
+height: max-content;
+text-align: left;
+}
+
+.profile__preview{
+  margin: 15% 10% 0% 5%;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(51, 51, 51, 0);
+  text-align: left;  
+}
+#shipmentOrderPreview{
+margin: 2% 0% 0% 1%;
+overflow: auto;
+top: 0px;
+width: 90%;	
+height: 240px;
+padding: 0px 4% 0px 4%;
+border-bottom: 1px solid black;
+border-left: 1px solid black;
+border-right: 1px solid black;	
+}
+#createShipmentPreview{
+  display:flex;
+  justify-content: space-between;
+  height: 240px;
+}
+
+/* For desktop: */
+@media only screen and (min-width: 1200px) {
+.profile__preview{
+      margin: 5% 10% 0% 5%;
+}
+h1{
+  font-size: 200%;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+#shipmentOrderPreview {
+  height: 190px;
+}
+
+.column{
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.row1>h2 {
+  margin: 0% 0% 0% 0%;
+  padding: 2% 2% 2% 0%;
+  color: black;
+}
+.row2>h2 {
+  margin: 0% 0% 0% 0%;
+  padding: 2% 2% 2% 0%;
+  color: black;
+}
+.profile__preview{
+  margin: 5% 10% 0% 5%;
+  height: 90%;
+  width: 90%;
+  background-color: rgba(51, 51, 51, 0);
+  text-align: left;  
+}
+}
+@media only screen and (min-width: 600px) and (max-width: 1199px)  {
+  .column{
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+}
+html, body > div {
+  height: 100%;
+}
+
+button {
+  outline: none;
+  cursor: pointer;
+}
+
+button:disabled {
+  cursor: default;
+  opacity: 0.5;
+}
+
+input {
+  margin: 0.5rem auto;
+  padding: 0.5rem;
+  border: 1px solid whitesmoke;
+  border-radius: 0.25rem;
+  font-weight: 300;
+  outline: none;
+}
+.Toastify__toast-container {
+  z-index: 9999;
+  position: fixed;
+  padding: 4px;
+  width: 320px;
+  box-sizing: border-box;
+  color: #fff; }
+  .Toastify__toast-container--top-left {
+    top: 1em;
+    left: 1em; }
+  .Toastify__toast-container--top-center {
+    top: 1em;
+    left: 50%;
+    margin-left: -160px; }
+  .Toastify__toast-container--top-right {
+    top: 1em;
+    right: 1em; }
+  .Toastify__toast-container--bottom-left {
+    bottom: 1em;
+    left: 1em; }
+  .Toastify__toast-container--bottom-center {
+    bottom: 1em;
+    left: 50%;
+    margin-left: -160px; }
+  .Toastify__toast-container--bottom-right {
+    bottom: 1em;
+    right: 1em; }
+
+@media only screen and (max-width: 480px) {
+  .Toastify__toast-container {
+    width: 100vw;
+    padding: 0;
+    left: 0;
+    margin: 0; }
+    .Toastify__toast-container--top-left, .Toastify__toast-container--top-center, .Toastify__toast-container--top-right {
+      top: 0; }
+    .Toastify__toast-container--bottom-left, .Toastify__toast-container--bottom-center, .Toastify__toast-container--bottom-right {
+      bottom: 0; }
+    .Toastify__toast-container--rtl {
+      right: 0;
+      left: initial; } }
+
+.Toastify__toast {
+  position: relative;
+  min-height: 64px;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+  padding: 8px;
+  border-radius: 1px;
+  box-shadow: 0 1px 10px 0 rgba(0, 0, 0, 0.1), 0 2px 15px 0 rgba(0, 0, 0, 0.05);
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: justify;
+      justify-content: space-between;
+  max-height: 800px;
+  overflow: hidden;
+  font-family: sans-serif;
+  cursor: pointer;
+  direction: ltr; }
+  .Toastify__toast--rtl {
+    direction: rtl; }
+  .Toastify__toast--default {
+    background: #fff;
+    color: #aaa; }
+  .Toastify__toast--info {
+    background: #3498db; }
+  .Toastify__toast--success {
+    background: #07bc0c; }
+  .Toastify__toast--warning {
+    background: #f1c40f; }
+  .Toastify__toast--error {
+    background: #e74c3c; }
+  .Toastify__toast-body {
+    margin: auto 0;
+    -ms-flex: 1;
+        flex: 1; }
+
+@media only screen and (max-width: 480px) {
+  .Toastify__toast {
+    margin-bottom: 0; } }
+
+.Toastify__close-button {
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  opacity: 0.7;
+  transition: 0.3s ease;
+  -ms-flex-item-align: start;
+      align-self: flex-start; }
+  .Toastify__close-button--default {
+    color: #000;
+    opacity: 0.3; }
+  .Toastify__close-button:hover, .Toastify__close-button:focus {
+    opacity: 1; }
+
+@keyframes Toastify__trackProgress {
+  0% {
+    transform: scaleX(1); }
+  100% {
+    transform: scaleX(0); } }
+
+.Toastify__progress-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 5px;
+  z-index: 9999;
+  opacity: 0.7;
+  background-color: rgba(255, 255, 255, 0.7);
+  transform-origin: left; }
+  .Toastify__progress-bar--animated {
+    animation: Toastify__trackProgress linear 1 forwards; }
+  .Toastify__progress-bar--controlled {
+    transition: transform .2s; }
+  .Toastify__progress-bar--rtl {
+    right: 0;
+    left: initial;
+    transform-origin: right; }
+  .Toastify__progress-bar--default {
+    background: linear-gradient(to right, #4cd964, #5ac8fa, #007aff, #34aadc, #5856d6, #ff2d55); }
+
+@keyframes Toastify__bounceInRight {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  from {
+    opacity: 0;
+    transform: translate3d(3000px, 0, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(-25px, 0, 0); }
+  75% {
+    transform: translate3d(10px, 0, 0); }
+  90% {
+    transform: translate3d(-5px, 0, 0); }
+  to {
+    transform: none; } }
+
+@keyframes Toastify__bounceOutRight {
+  20% {
+    opacity: 1;
+    transform: translate3d(-20px, 0, 0); }
+  to {
+    opacity: 0;
+    transform: translate3d(2000px, 0, 0); } }
+
+@keyframes Toastify__bounceInLeft {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    transform: translate3d(-3000px, 0, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(25px, 0, 0); }
+  75% {
+    transform: translate3d(-10px, 0, 0); }
+  90% {
+    transform: translate3d(5px, 0, 0); }
+  to {
+    transform: none; } }
+
+@keyframes Toastify__bounceOutLeft {
+  20% {
+    opacity: 1;
+    transform: translate3d(20px, 0, 0); }
+  to {
+    opacity: 0;
+    transform: translate3d(-2000px, 0, 0); } }
+
+@keyframes Toastify__bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  from {
+    opacity: 0;
+    transform: translate3d(0, 3000px, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0); }
+  75% {
+    transform: translate3d(0, 10px, 0); }
+  90% {
+    transform: translate3d(0, -5px, 0); }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes Toastify__bounceOutUp {
+  20% {
+    transform: translate3d(0, -10px, 0); }
+  40%,
+  45% {
+    opacity: 1;
+    transform: translate3d(0, 20px, 0); }
+  to {
+    opacity: 0;
+    transform: translate3d(0, -2000px, 0); } }
+
+@keyframes Toastify__bounceInDown {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  0% {
+    opacity: 0;
+    transform: translate3d(0, -3000px, 0); }
+  60% {
+    opacity: 1;
+    transform: translate3d(0, 25px, 0); }
+  75% {
+    transform: translate3d(0, -10px, 0); }
+  90% {
+    transform: translate3d(0, 5px, 0); }
+  to {
+    transform: none; } }
+
+@keyframes Toastify__bounceOutDown {
+  20% {
+    transform: translate3d(0, 10px, 0); }
+  40%,
+  45% {
+    opacity: 1;
+    transform: translate3d(0, -20px, 0); }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 2000px, 0); } }
+
+.Toastify__bounce-enter--top-left, .Toastify__bounce-enter--bottom-left {
+  animation-name: Toastify__bounceInLeft; }
+
+.Toastify__bounce-enter--top-right, .Toastify__bounce-enter--bottom-right {
+  animation-name: Toastify__bounceInRight; }
+
+.Toastify__bounce-enter--top-center {
+  animation-name: Toastify__bounceInDown; }
+
+.Toastify__bounce-enter--bottom-center {
+  animation-name: Toastify__bounceInUp; }
+
+.Toastify__bounce-exit--top-left, .Toastify__bounce-exit--bottom-left {
+  animation-name: Toastify__bounceOutLeft; }
+
+.Toastify__bounce-exit--top-right, .Toastify__bounce-exit--bottom-right {
+  animation-name: Toastify__bounceOutRight; }
+
+.Toastify__bounce-exit--top-center {
+  animation-name: Toastify__bounceOutUp; }
+
+.Toastify__bounce-exit--bottom-center {
+  animation-name: Toastify__bounceOutDown; }
+
+@keyframes Toastify__zoomIn {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3); }
+  50% {
+    opacity: 1; } }
+
+@keyframes Toastify__zoomOut {
+  from {
+    opacity: 1; }
+  50% {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 0.3); }
+  to {
+    opacity: 0; } }
+
+.Toastify__zoom-enter {
+  animation-name: Toastify__zoomIn; }
+
+.Toastify__zoom-exit {
+  animation-name: Toastify__zoomOut; }
+
+@keyframes Toastify__flipIn {
+  from {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    animation-timing-function: ease-in;
+    opacity: 0; }
+  40% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    animation-timing-function: ease-in; }
+  60% {
+    transform: perspective(400px) rotate3d(1, 0, 0, 10deg);
+    opacity: 1; }
+  80% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -5deg); }
+  to {
+    transform: perspective(400px); } }
+
+@keyframes Toastify__flipOut {
+  from {
+    transform: perspective(400px); }
+  30% {
+    transform: perspective(400px) rotate3d(1, 0, 0, -20deg);
+    opacity: 1; }
+  to {
+    transform: perspective(400px) rotate3d(1, 0, 0, 90deg);
+    opacity: 0; } }
+
+.Toastify__flip-enter {
+  animation-name: Toastify__flipIn; }
+
+.Toastify__flip-exit {
+  animation-name: Toastify__flipOut; }
+
+@keyframes Toastify__slideInRight {
+  from {
+    transform: translate3d(110%, 0, 0);
+    visibility: visible; }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes Toastify__slideInLeft {
+  from {
+    transform: translate3d(-110%, 0, 0);
+    visibility: visible; }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes Toastify__slideInUp {
+  from {
+    transform: translate3d(0, 110%, 0);
+    visibility: visible; }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes Toastify__slideInDown {
+  from {
+    transform: translate3d(0, -110%, 0);
+    visibility: visible; }
+  to {
+    transform: translate3d(0, 0, 0); } }
+
+@keyframes Toastify__slideOutRight {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    transform: translate3d(110%, 0, 0); } }
+
+@keyframes Toastify__slideOutLeft {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    transform: translate3d(-110%, 0, 0); } }
+
+@keyframes Toastify__slideOutDown {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, 500px, 0); } }
+
+@keyframes Toastify__slideOutUp {
+  from {
+    transform: translate3d(0, 0, 0); }
+  to {
+    visibility: hidden;
+    transform: translate3d(0, -500px, 0); } }
+
+.Toastify__slide-enter--top-left, .Toastify__slide-enter--bottom-left {
+  animation-name: Toastify__slideInLeft; }
+
+.Toastify__slide-enter--top-right, .Toastify__slide-enter--bottom-right {
+  animation-name: Toastify__slideInRight; }
+
+.Toastify__slide-enter--top-center {
+  animation-name: Toastify__slideInDown; }
+
+.Toastify__slide-enter--bottom-center {
+  animation-name: Toastify__slideInUp; }
+
+.Toastify__slide-exit--top-left, .Toastify__slide-exit--bottom-left {
+  animation-name: Toastify__slideOutLeft; }
+
+.Toastify__slide-exit--top-right, .Toastify__slide-exit--bottom-right {
+  animation-name: Toastify__slideOutRight; }
+
+.Toastify__slide-exit--top-center {
+  animation-name: Toastify__slideOutUp; }
+
+.Toastify__slide-exit--bottom-center {
+  animation-name: Toastify__slideOutDown; }
+
+/*# sourceMappingURL=ReactToastify.css.map */

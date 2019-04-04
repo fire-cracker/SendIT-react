@@ -4,7 +4,7 @@ import { mount } from 'enzyme';
 import decodeJwt from 'jwt-decode';
 import { toast } from 'react-toastify';
 
-import { GetUserOrders } from '../../../components/trackOrder/track';
+import { ProfilePage } from '../../../components/profile/ProfilePage';
 import { orders } from '../../mock/orders';
 
 jest.mock('../../../utils/axiosConfig');
@@ -12,7 +12,7 @@ jest.mock('react-toastify');
 jest.mock('../../../redux/actions/createOrder');
 jest.mock('jwt-decode');
 
-describe('Tests for the track Page', () => {
+describe('Tests for the Profile Page', () => {
   const props = {
     getOrder: jest.fn().mockResolvedValue({}),
     orders: { orders },
@@ -29,10 +29,10 @@ describe('Tests for the track Page', () => {
   }));
 
   beforeEach(() => {
-    wrapper = mount(<MemoryRouter><GetUserOrders {...props} /></MemoryRouter>);
+    wrapper = mount(<MemoryRouter><ProfilePage {...props} /></MemoryRouter>);
   });
 
-  it('Should render the track page', () => {
+  it('Should render the Profile page', () => {
     expect(wrapper).toMatchSnapshot();
     wrapper.find('.navLink').at(0).simulate('click');
     wrapper.find('.navLink').at(1).simulate('click');
@@ -48,7 +48,7 @@ describe('Tests for the track Page', () => {
       })),
       orders: { orders }
     };
-    wrapper = mount(<MemoryRouter><GetUserOrders {...props} /></MemoryRouter>);
+    wrapper = mount(<MemoryRouter><ProfilePage {...props} /></MemoryRouter>);
   });
 
   it('should throw error if request is not sucessful', () => {
@@ -60,6 +60,6 @@ describe('Tests for the track Page', () => {
       })),
       orders: { orders }
     };
-    wrapper = mount(<MemoryRouter><GetUserOrders {...props} /></MemoryRouter>);
+    wrapper = mount(<MemoryRouter><ProfilePage {...props} /></MemoryRouter>);
   });
 });

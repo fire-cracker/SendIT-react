@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for the track Page Should render the track page 1`] = `
+exports[`Tests for the Profile Page Should render the Profile page 1`] = `
 <MemoryRouter>
   <Router
     history={
@@ -12,7 +12,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "e6x7z5",
+            "key": "frj8te",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "e6x7z5",
+          "key": "frj8te",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -36,27 +36,13 @@ exports[`Tests for the track Page Should render the track page 1`] = `
       }
     }
   >
-    <GetAllOrders
-      allOrders={
-        Object {
-          "allOrders": Array [
-            Object {
-              "fromAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
-              "toAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
-              "weight": "2",
-            },
-            Object {
-              "fromAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
-              "toAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
-              "weight": "2",
-            },
-          ],
-        }
-      }
-      getAllOrders={
+    <ProfilePage
+      getOrder={
         [MockFunction] {
           "calls": Array [
-            Array [],
+            Array [
+              "chinchin",
+            ],
           ],
           "results": Array [
             Object {
@@ -71,8 +57,26 @@ exports[`Tests for the track Page Should render the track page 1`] = `
           "isLoggedIn": true,
         }
       }
+      orders={
+        Object {
+          "orders": Array [
+            Object {
+              "fromAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
+              "toAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
+              "weight": "2",
+            },
+            Object {
+              "fromAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
+              "toAddress": "Oyedeji Haven, Jagun Old Ife Road Ibadan",
+              "weight": "2",
+            },
+          ],
+        }
+      }
     >
-      <div>
+      <div
+        className="profile__page"
+      >
         <div>
           <Header>
             <div
@@ -192,57 +196,100 @@ exports[`Tests for the track Page Should render the track page 1`] = `
             </div>
           </Header>
         </div>
-        <div
-          id="informationFields"
-        >
+        <div>
           <div
-            className="preview"
-            id="preview"
+            className="createAshipment"
           >
-            <h1>
-               Hi Admin! Track Your Orders 
-            </h1>
-            <div
-              className="navTabs"
-              id="navTabs"
+            <h1
+              id="user"
             >
-              <a
-                className="navLink active"
-                onClick={[Function]}
-              >
-                NEW ORDERS
-              </a>
-              <a
-                className="navLink"
-                onClick={[Function]}
-              >
-                PENDING ORDERS
-              </a>
-              <a
-                className="navLink"
-                onClick={[Function]}
-              >
-                DELIVERED ORDERS 
-              </a>
-            </div>
-            <div
-              id="information"
+              Hi!   
+            </h1>
+            <form
+              className="profileDetails"
+              id="profileDetails"
             >
               <div
-                className="newPending-active"
-                id="shipmentOrder"
+                className="column"
               >
-                <p
-                  className="no__order"
+                <div
+                  className="row1"
                 >
-                  No Order
-                </p>
+                  <h2>
+                     Delivered parcel delivery order
+                  </h2>
+                  <a
+                    id="deliveredNumber"
+                  >
+                    0
+                  </a>
+                </div>
+                <div
+                  className="row2"
+                >
+                  <h2>
+                    Pending parcel delivery order
+                  </h2>
+                  <a
+                    id="pendingNumber"
+                  >
+                    2
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            id="informationFields"
+          >
+            <div
+              className="profile__preview"
+            >
+              <h1>
+                 Parcel Delivery Orders
+              </h1>
+              <div
+                className="navTabs"
+                id="navTabs"
+              >
+                <a
+                  className="navLink active"
+                  onClick={[Function]}
+                >
+                  NEW ORDERS
+                </a>
+                <a
+                  className="navLink"
+                  onClick={[Function]}
+                >
+                  PENDING ORDERS
+                </a>
+                <a
+                  className="navLink"
+                  onClick={[Function]}
+                >
+                  DELIVERED ORDERS 
+                </a>
+              </div>
+              <div
+                id="information"
+              >
+                <div
+                  className="newPending-active"
+                  id="shipmentOrder"
+                >
+                  <p
+                    className="no__order"
+                  >
+                    No Order
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </GetAllOrders>
+    </ProfilePage>
   </Router>
 </MemoryRouter>
 `;
