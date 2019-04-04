@@ -12,7 +12,7 @@ exports[`Tests for the Profile Page Should render the Profile page 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "znrr1w",
+            "key": "frj8te",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Tests for the Profile Page Should render the Profile page 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "znrr1w",
+          "key": "frj8te",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -278,34 +278,11 @@ exports[`Tests for the Profile Page Should render the Profile page 1`] = `
                   className="newPending-active"
                   id="shipmentOrder"
                 >
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>
-                          Pickup Location
-                        </th>
-                        <th>
-                          Destination
-                        </th>
-                        <th>
-                          weight(kg)
-                        </th>
-                        <th>
-                          Price
-                        </th>
-                        <th>
-                          Date of Order
-                        </th>
-                        <th>
-                          Status
-                        </th>
-                      </tr>
-                      <OrderEntries
-                        orders={Array []}
-                        showPending={true}
-                      />
-                    </thead>
-                  </table>
+                  <p
+                    className="no__order"
+                  >
+                    No Order
+                  </p>
                 </div>
               </div>
             </div>

@@ -130,7 +130,17 @@ border-right: 1px solid black;
   justify-content: space-between;
   height: 240px;
 }
-
+.red {
+  color: red;
+  font-size: 1.5rem;
+}
+.edit__button{
+  font-size: 1rem;
+}
+.no__order{
+  text-align: center;
+  font-size: 3rem;
+}
 /* For desktop: */
 @media only screen and (min-width: 1200px) {
 .track--preview{

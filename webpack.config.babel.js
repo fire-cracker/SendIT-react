@@ -13,8 +13,7 @@ export default {
     filename: 'bundle.js',
   },
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.(js|jsx)$/,
         exclude: '/node_modules/',
         use: {
@@ -48,7 +47,9 @@ export default {
     ]
   },
   plugins: [
-    new ExtractTextPlugin({ filename: 'styles.css' }),
+    new ExtractTextPlugin({
+      filename: 'styles.css'
+    }),
     new webpack.EnvironmentPlugin([
       'API_ROOT_URL',
     ])

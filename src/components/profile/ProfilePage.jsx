@@ -5,7 +5,7 @@ import { toast } from 'react-toastify';
 import decodeJwt from 'jwt-decode';
 
 import { getOrder } from '../../redux/actions/track';
-import OrderEntries from '../trackOrder/orderEntries';
+import OrderEntries from './OrderEntries';
 import Header from '../header';
 import './style.css';
 
@@ -14,17 +14,15 @@ export class ProfilePage extends Component {
     showNew: false,
     showPending: true,
     showDelivered: true,
-    ordersToDisplay: [],
+    status: 'New'
   }
 
   componentDidMount() {
     const { token } = localStorage;
     const { userId } = decodeJwt(token);
-    const { getOrder, orders, history } = this.props;
+    const { getOrder, history } = this.props;
     getOrder(userId)
-      .then(() => {
-        this.setState({ ordersToDisplay: orders.orders });
-      })
+      .then()
       .catch((error) => {
         const { response, response: { status } } = error;
         if (response && status === 401) {
@@ -43,21 +41,19 @@ export class ProfilePage extends Component {
   }
 
   toggleDiv = (status, showingDiv) => {
-    const { orders: { orders } } = this.props;
-    const ordersToDisplay = orders.filter(order => order.orderStatus === status);
     this.setState(() => ({
       showNew: true,
       showPending: true,
       showDelivered: true,
       [showingDiv]: false,
-      ordersToDisplay,
+      status
     }));
   };
 
   render() {
     const { orders: { orders } } = this.props;
     const {
-      showNew, showPending, showDelivered, ordersToDisplay
+      showNew, showPending, showDelivered, status
     } = this.state;
     const deliveredOrders = orders.filter(order => order.orderStatus === 'Delivered');
     const deliveredOrdersLength = deliveredOrders.length;
@@ -65,9 +61,7 @@ export class ProfilePage extends Component {
     const unresolvedOrdersLength = unresolvedOrders.length;
     const { token } = localStorage;
     const { userName } = decodeJwt(token);
-    const orderEntries = ordersToDisplay.length
-      ? ordersToDisplay
-      : orders.filter(order => order.orderStatus === 'New');
+    const orderEntries = orders.filter(order => order.orderStatus === status);
 
     return (
       <div className="profile__page">
@@ -127,22 +121,29 @@ export class ProfilePage extends Component {
                   id="shipmentOrder"
                   className="newPending-active"
                 >
-                  <table>
-                    <thead>
-                      <tr>
-                        <th>Pickup Location</th>
-                        <th>Destination</th>
-                        <th>weight(kg)</th>
-                        <th>Price</th>
-                        <th>Date of Order</th>
-                        <th>Status</th>
-                        {showPending ? null : (<th>PresentLocation</th>)}
-                      </tr>
+                  { orderEntries.length
+                    ? (
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Pickup Location</th>
+                            <th>Destination</th>
+                            <th>weight(kg)</th>
+                            <th>Price</th>
+                            <th>Date of Order</th>
+                            <th>Status</th>
+                            {showPending ? null : (<th>PresentLocation</th>)}
+                          </tr>
 
-                      <OrderEntries showPending={showPending} orders={orderEntries} />
+                          <OrderEntries showPending={showPending} orders={orderEntries} />
 
-                    </thead>
-                  </table>
+                        </thead>
+                      </table>
+                    )
+                    : (
+                      <p className="no__order">No Order</p>
+                    )
+                  }
 
                 </div>
               </div>
