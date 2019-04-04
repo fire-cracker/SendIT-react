@@ -1,21 +1,33 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Tests for the track Page Should render the track page 1`] = `
-<BrowserRouter>
+<MemoryRouter>
   <Router
     history={
       Object {
         "action": "POP",
         "block": [Function],
+        "canGo": [Function],
         "createHref": [Function],
+        "entries": Array [
+          Object {
+            "hash": "",
+            "key": "ur37ke",
+            "pathname": "/",
+            "search": "",
+            "state": undefined,
+          },
+        ],
         "go": [Function],
         "goBack": [Function],
         "goForward": [Function],
+        "index": 0,
         "length": 1,
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "pathname": "/test.html",
+          "key": "ur37ke",
+          "pathname": "/",
           "search": "",
           "state": undefined,
         },
@@ -41,7 +53,24 @@ exports[`Tests for the track Page Should render the track page 1`] = `
           ],
         }
       }
-      getOrder={[MockFunction]}
+      getAllOrders={
+        [MockFunction] {
+          "calls": Array [
+            Array [],
+          ],
+          "results": Array [
+            Object {
+              "type": "return",
+              "value": Promise {},
+            },
+          ],
+        }
+      }
+      login={
+        Object {
+          "isLoggedIn": true,
+        }
+      }
     >
       <div>
         <div>
@@ -167,10 +196,11 @@ exports[`Tests for the track Page Should render the track page 1`] = `
           id="informationFields"
         >
           <div
+            className="preview"
             id="preview"
           >
             <h1>
-               Hi User! Track Your Orders 
+               Hi Admin! Track Your Orders 
             </h1>
             <div
               className="navTabs"
@@ -237,5 +267,5 @@ exports[`Tests for the track Page Should render the track page 1`] = `
       </div>
     </GetAllOrders>
   </Router>
-</BrowserRouter>
+</MemoryRouter>
 `;

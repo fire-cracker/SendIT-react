@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Tests for the track Page Should render the track page 1`] = `
+exports[`Tests for the Profile Page Should render the Profile page 1`] = `
 <MemoryRouter>
   <Router
     history={
@@ -12,7 +12,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "kycoce",
+            "key": "znrr1w",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "kycoce",
+          "key": "znrr1w",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -36,7 +36,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
       }
     }
   >
-    <GetUserOrders
+    <ProfilePage
       getOrder={
         [MockFunction] {
           "calls": Array [
@@ -75,7 +75,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
       }
     >
       <div
-        className="track"
+        className="profile__page"
       >
         <div>
           <Header>
@@ -196,79 +196,123 @@ exports[`Tests for the track Page Should render the track page 1`] = `
             </div>
           </Header>
         </div>
-        <div
-          id="informationFields"
-        >
+        <div>
           <div
-            className="track--preview"
+            className="createAshipment"
           >
-            <h1>
-               Hi User! Track Your Orders 
-            </h1>
-            <div
-              className="navTabs"
-              id="navTabs"
+            <h1
+              id="user"
             >
-              <a
-                className="navLink active"
-                onClick={[Function]}
-              >
-                NEW ORDERS
-              </a>
-              <a
-                className="navLink"
-                onClick={[Function]}
-              >
-                PENDING ORDERS
-              </a>
-              <a
-                className="navLink"
-                onClick={[Function]}
-              >
-                DELIVERED ORDERS 
-              </a>
-            </div>
-            <div
-              id="information"
+              Hi!   
+            </h1>
+            <form
+              className="profileDetails"
+              id="profileDetails"
             >
               <div
-                className="newPending-active"
-                id="shipmentOrder"
+                className="column"
               >
-                <table>
-                  <thead>
-                    <tr>
-                      <th>
-                        Pickup Location
-                      </th>
-                      <th>
-                        Destination
-                      </th>
-                      <th>
-                        weight(kg)
-                      </th>
-                      <th>
-                        Price
-                      </th>
-                      <th>
-                        Date of Order
-                      </th>
-                      <th>
-                        Status
-                      </th>
-                    </tr>
-                    <OrderEntries
-                      orders={Array []}
-                      showPending={true}
-                    />
-                  </thead>
-                </table>
+                <div
+                  className="row1"
+                >
+                  <h2>
+                     Delivered parcel delivery order
+                  </h2>
+                  <a
+                    id="deliveredNumber"
+                  >
+                    0
+                  </a>
+                </div>
+                <div
+                  className="row2"
+                >
+                  <h2>
+                    Pending parcel delivery order
+                  </h2>
+                  <a
+                    id="pendingNumber"
+                  >
+                    2
+                  </a>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div
+            id="informationFields"
+          >
+            <div
+              className="profile__preview"
+            >
+              <h1>
+                 Parcel Delivery Orders
+              </h1>
+              <div
+                className="navTabs"
+                id="navTabs"
+              >
+                <a
+                  className="navLink active"
+                  onClick={[Function]}
+                >
+                  NEW ORDERS
+                </a>
+                <a
+                  className="navLink"
+                  onClick={[Function]}
+                >
+                  PENDING ORDERS
+                </a>
+                <a
+                  className="navLink"
+                  onClick={[Function]}
+                >
+                  DELIVERED ORDERS 
+                </a>
+              </div>
+              <div
+                id="information"
+              >
+                <div
+                  className="newPending-active"
+                  id="shipmentOrder"
+                >
+                  <table>
+                    <thead>
+                      <tr>
+                        <th>
+                          Pickup Location
+                        </th>
+                        <th>
+                          Destination
+                        </th>
+                        <th>
+                          weight(kg)
+                        </th>
+                        <th>
+                          Price
+                        </th>
+                        <th>
+                          Date of Order
+                        </th>
+                        <th>
+                          Status
+                        </th>
+                      </tr>
+                      <OrderEntries
+                        orders={Array []}
+                        showPending={true}
+                      />
+                    </thead>
+                  </table>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </GetUserOrders>
+    </ProfilePage>
   </Router>
 </MemoryRouter>
 `;
