@@ -10,7 +10,6 @@
 * [Features](#Features)
 * [Demo](#demo)
 * [Built with](#built-with)
-* [API End Points](#API-End-Points)
 * [Known Issues](#Known-issues)
 * [Installation](#Installation)
 * [Testing the app](#Testing-the-app)
@@ -47,20 +46,6 @@ Visit [Repo on Github](https://github.com/oyedejipeace/SendIT-react)
 - `body-parser`
 - `morgan`
 
-## API End Points
-- `GET /api/v1/users`                             -   Fetches all users in the Database
-- `GET /api/v1/parcels`                           -   Fetches all Available Orders in the Database
-- `GET /api/v1/parcels/<parcelId>`                -   Fetches a particular order in the database
-- `GET /api/v1/users/<usersId>/parcels/`      -   Fetches the orders of a particualar user in the database
-- `POST /api/v1/parcels/`                         -   Saves an Order in the database
-- `POST /api/v1/auth/signup`                      -   Signs up a user
-- `POST /api/v1/auth/login`                       -   User can login
-- `PUT /api/v1/parcels/<parcelId>/presentLocation`-   Updates the location of an order in the database
-- `PUT /api/v1/parcels/<parcelId>/status`         -   Updates the status of an order in the database
-- `PUT /api/v1/parcels/<parcelId>/destination`    -   Updates the destination of an order in the database
-- `PUT /api/v1/parcels/<parcelId>/cancel     `    -   Cancels an order in the database
-- `DELETE /api/v1/parcels/<parcelId >`            -   Deletes an order in the database
-
  
  ## Known issues
 Everything works as expected; However:
@@ -73,7 +58,7 @@ Everything works as expected; However:
 - $ cd SendIT-react
 - $ npm i , to install dependencies
 - $ npm start, to start the server
-Once the server starts-up, you can query the api at `http://localhost:5000/api/v1` using the end points stated above.
+Once the server starts-up, you can query the api at `http://localhost:5000/api/v1`.
 
 ## Testing the app
 
