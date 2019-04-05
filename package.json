@@ -11,7 +11,7 @@
     "test-watch": "jest -u --coverage --watchAll",
     "coverage": "cat ./coverage/lcov.info | coveralls",
     "build-server": "babel server.js -d build",
-    "start": "node dist",
+    "start": "npm run test && npm run build && node dist",
     "clear": "rimraf ./public/bundle.js",
     "start-dev": "webpack-dev-server --mode development --hot ",
     "build": " rimraf build && webpack --mode production && babel server -d dist",

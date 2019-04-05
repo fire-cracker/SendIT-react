@@ -12,7 +12,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "kva1mh",
+            "key": "dkjzy1",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "kva1mh",
+          "key": "dkjzy1",
           "pathname": "/",
           "search": "",
           "state": undefined,
