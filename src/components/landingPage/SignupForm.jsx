@@ -40,21 +40,21 @@ export default class Signup extends Component {
   onUsernameBlur = () => {
     const { username } = this.state;
 
-    if (!username) {
+    if (!username.trim()) {
       return this.setState({
         usernameErrorMessage: 'Please enter your username.'
       });
     }
 
-    if (!isAlphanumeric(username)) {
+    if (!isAlphanumeric(username.trim())) {
       return this.setState({
-        usernameErrorMessage: 'Use numbers and letters for password.'
+        usernameErrorMessage: 'Use numbers and letters for username.'
       });
     }
 
     if (username.length < 8 || username.length > 15) {
       return this.setState({
-        usernameErrorMessage: 'Password must between 8 and 15 characters.'
+        usernameErrorMessage: 'username must between 8 and 15 characters.'
       });
     }
   };
@@ -62,13 +62,13 @@ export default class Signup extends Component {
   onPasswordBlur = () => {
     const { password } = this.state;
 
-    if (!password) {
+    if (!password.trim()) {
       return this.setState({
         passwordErrorMessage: 'Please enter your password.'
       });
     }
 
-    if (!isAlphanumeric(password)) {
+    if (!isAlphanumeric(password.trim())) {
       return this.setState({
         passwordErrorMessage: 'Use numbers and letters for password.'
       });
@@ -84,13 +84,13 @@ export default class Signup extends Component {
   onEmailBlur = () => {
     const { email } = this.state;
 
-    if (!email) {
+    if (!email.trim()) {
       return this.setState({
         emailErrorMessage: 'Please enter your email.'
       });
     }
 
-    if (!isEmail(email)) {
+    if (!isEmail(email.trim())) {
       return this.setState({
         emailErrorMessage: 'email is invalid.'
       });

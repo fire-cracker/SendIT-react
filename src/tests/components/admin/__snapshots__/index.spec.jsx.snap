@@ -12,7 +12,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "rmlw2s",
+            "key": "qriq3v",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Tests for the track Page Should render the track page 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "rmlw2s",
+          "key": "qriq3v",
           "pathname": "/",
           "search": "",
           "state": undefined,

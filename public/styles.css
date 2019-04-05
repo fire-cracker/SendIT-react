@@ -14,14 +14,14 @@ body {
 }
 
 .whole {
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: row;
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
   background-repeat: no-repeat;
-  background-size: 100% 100%;
+  background-size: cover;
   background-image: linear-gradient(rgba(0, 0, 0, .5), rgba(0, 0, 0, .5)), url(images/background4.jpg);
 }
 
@@ -325,8 +325,6 @@ span.notMember {
   color: #f2f2f2;
   text-align: center;
   padding: 8px;
-  text-decoration: none;
-  /* background-color: #333; */
   font-size: 14px;
   height: 18px;
 }
@@ -348,8 +346,10 @@ span.notMember {
 }
 
 .blink {
-  margin:0px 0px 0px 10px;
+  margin: 0px 0px 0px 10px;
   font-family: "Sofia";
+  color: white;
+  line-height: 2rem;
 }
 
 .blink_caption {
@@ -377,7 +377,7 @@ span.notMember {
   cursor: pointer;
 }
 
-#active {
+.active {
   text-decoration: underline;
 }
 
@@ -393,15 +393,18 @@ span.notMember {
     top: 0;
 }
 .navigation.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+  float: none;
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 3rem;
+  padding-top: 1rem;
 }
 /* For desktop: */
 @media only screen and (min-width: 768px) {
   #admin,
   #track,
-  #active,
+  #create__order,
   #home,
   #profile,
   #signOut,
@@ -428,9 +431,9 @@ span.notMember {
   color: #f2f2f2;
   text-align: center;
   padding: 8px;
-  text-decoration: none;
   font-size: 14px;
   height: 18px;
+  line-height: 1rem;
 }
 
 .responsive--navBar {
@@ -481,7 +484,7 @@ span.notMember {
 
 .fromform{
   margin:auto;
-  width: 20%;
+  width: 60%;
   overflow: auto;
   padding: 18px 4% 20px 4%;
   border: 1px solid #888;
@@ -526,14 +529,18 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .createShipmentButton>button {
   padding: 1% 3%;
-  margin: 0% 0% 1% 80%;
   border-radius: 10px;
   font-size: 120%;
+  float: right;
   }
  /* For desktop: */
  @media only screen and (min-width: 768px) {
-  .fromform{
+  /* .fromform{
      width: 40%;
+  } */
+  .fromform{
+    margin:auto;
+    width: 35%;
   }
 }
 /* Styling the body background */
@@ -603,8 +610,8 @@ tr:nth-child(even) {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   border-bottom: none;
-  padding-top: 1rem!important;
-  margin-top: 3rem!important;
+  /* padding-top: 1rem!important;
+  margin-top: 3rem!important; */
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
@@ -853,26 +860,31 @@ body {
   font-style: normal;
   line-height: 1.5;
   color: #232323;
-  font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
   font-size: 1rem;
   font-weight: 400;
 }
-.profile__page h1{
+
+.profile__page h1 {
   text-align: center;
-  margin: auto;
+  margin: 0 auto;
   width: 95%;
   height: max-content;
   color: black;
   font-size: 2rem;
   border-radius: 5px;
-  margin-bottom: 5px;
+  /* margin-bottom: 5px; */
   font-weight: bold;
-  padding: 10px;
+  /* padding: 10px; */
   font-family: 'Rubik', sans-serif;
 }
 
+.profile__preview>h1 {
+  padding-top: 19%;
+}
+
 /* Styling the Parcel delivery Orders Section background */
-#information{
+#information {
   height: max-content;
   height: 100%;
   width: 100%;
@@ -886,7 +898,8 @@ table {
   margin-top: 3rem;
 }
 
-td, th {
+td,
+th {
   border: 1px solid #dddddd;
   text-align: left;
   padding: 8px;
@@ -905,6 +918,7 @@ tr:nth-child(even) {
   background-repeat: no-repeat;
   background-size: cover;
 }
+
 /* Styling the Top nav Section */
 .navTabs {
   display: -webkit-flex;
@@ -912,12 +926,13 @@ tr:nth-child(even) {
   -webkit-flex-wrap: wrap;
   flex-wrap: wrap;
   border-bottom: none;
-  padding-top: 1rem!important;
-  margin-top: 3rem!important;
+  padding-top: 0 !important;
+  margin-top: 0 !important;
   padding-left: 0;
   margin-bottom: 0;
   list-style: none;
 }
+
 .navLink {
   box-sizing: border-box;
   color: #767676;
@@ -932,144 +947,183 @@ tr:nth-child(even) {
   display: block;
 }
 
-a{
+a {
   text-decoration: none;
   cursor: pointer;
   background-color: transparent;
 }
 
-.navLink:hover, .navTabs>.active{
+.navLink:hover,
+.navTabs>.active {
   border: 2px solid #149dcc;
   background: #149dcc;
-  color:white;
+  color: white;
 }
 
-.delivered,.newPending{
-  display:none;
+.delivered,
+.newPending {
+  display: none;
 }
 
-.newPending-active,.Delivered-active{
-  display:block;
+.newPending-active,
+.Delivered-active {
+  display: block;
 }
 
 /* Styling the profile Section */
-.createAshipment{
+.createAshipment {
   padding-top: 2rem;
   margin: 8% 0% 0% 0%;
-  position:auto;
-  display:block;
+  position: auto;
+  display: block;
   height: 160px;
 }
 
 /* Styling the Delivered and Pending Parcel Delivery Order Section */
-.profileDetails{
+.profileDetails {
   text-align: center;
-  margin:0% 10% 0% 0%;
+  margin: 0% 10% 0% 0%;
   overflow: auto;
   top: 0px;
-  padding: 18px 4% 20px 4%; 
-  display:flex;  	
+  padding: 18px 4% 20px 4%;
+  display: flex;
   justify-content: space-between;
 }
-.column{
+
+.column {
   display: flex;
   width: 100%;
   justify-content: space-evenly;
   flex-flow: row wrap;
 }
-.row1{
-  border-radius: 30px 30px 30px 30px;	
-  box-shadow:	5px 5px rgb(50, 42, 127);
-  height:80px;
+
+.row1 {
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 5px 5px rgb(50, 42, 127);
+  height: 80px;
   width: 25rem;
   margin-bottom: 1rem;
 }
-.row2{
-  border-radius: 30px 30px 30px 30px;	
-  box-shadow:	5px 5px rgb(50, 42, 127);
-  height:80px;
+
+.row2 {
+  border-radius: 30px 30px 30px 30px;
+  box-shadow: 5px 5px rgb(50, 42, 127);
+  height: 80px;
   width: 25rem;
 }
+
 .row1>h2 {
   margin: 0% 0% 0% 0%;
   padding: 2% 2% 2% 0%;
   color: black;
 }
+
 .row2>h2 {
   margin: 0% 0% 0% 0%;
   padding: 2% 2% 2% 0%;
   color: black;
 }
+
 /* Styling the Parcel delivery Orders Section */
-#informationFields{
-padding-top: 2rem;
-height: max-content;
-text-align: left;
+#informationFields {
+  padding-top: 2rem;
+  height: max-content;
+  text-align: left;
 }
 
-.profile__preview{
+.profile__preview {
   margin: 15% 10% 0% 5%;
   height: 90%;
   width: 90%;
   background-color: rgba(51, 51, 51, 0);
-  text-align: left;  
+  text-align: left;
 }
-#shipmentOrderPreview{
-margin: 2% 0% 0% 1%;
-overflow: auto;
-top: 0px;
-width: 90%;	
-height: 240px;
-padding: 0px 4% 0px 4%;
-border-bottom: 1px solid black;
-border-left: 1px solid black;
-border-right: 1px solid black;	
+
+#shipmentOrderPreview {
+  margin: 2% 0% 0% 1%;
+  overflow: auto;
+  top: 0px;
+  width: 90%;
+  height: 240px;
+  padding: 0px 4% 0px 4%;
+  border-bottom: 1px solid black;
+  border-left: 1px solid black;
+  border-right: 1px solid black;
 }
-#createShipmentPreview{
-  display:flex;
+
+#createShipmentPreview {
+  display: flex;
   justify-content: space-between;
   height: 240px;
 }
 
+.order-table {
+  overflow: scroll;
+  position: relative;
+}
+
 /* For desktop: */
 @media only screen and (min-width: 1200px) {
-.profile__preview{
-      margin: 5% 10% 0% 5%;
+  .profile__preview {
+    margin: 5% 10% 0% 5%;
+  }
+
+  h1 {
+    font-size: 200%;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  }
+
+  #shipmentOrderPreview {
+    height: 190px;
+  }
+
+  .column {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .row1>h2 {
+    margin: 0% 0% 0% 0%;
+    padding: 2% 2% 2% 0%;
+    color: black;
+  }
+
+  .row2>h2 {
+    margin: 0% 0% 0% 0%;
+    padding: 2% 2% 2% 0%;
+    color: black;
+  }
+
+  .profile__preview {
+    margin: 5% 10% 0% 5%;
+    height: 90%;
+    width: 90%;
+    background-color: rgba(51, 51, 51, 0);
+    text-align: left;
+  }
+
+  .profile__preview>h1 {
+    padding-top: 0;
+    padding-bottom: 2rem;
+  }
+
+  .createAshipment {
+    padding-top: 0;
+    margin: 5% 0% 0% 0%;
+    position: auto;
+    display: block;
+    height: 160px;
+  }
+  #informationFields {
+    padding-top: 0rem;
+    height: max-content;
+    text-align: left;
 }
-h1{
-  font-size: 200%;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-}
-#shipmentOrderPreview {
-  height: 190px;
 }
 
-.column{
-  display: flex;
-  width: 100%;
-  justify-content: space-evenly;
-}
-
-.row1>h2 {
-  margin: 0% 0% 0% 0%;
-  padding: 2% 2% 2% 0%;
-  color: black;
-}
-.row2>h2 {
-  margin: 0% 0% 0% 0%;
-  padding: 2% 2% 2% 0%;
-  color: black;
-}
-.profile__preview{
-  margin: 5% 10% 0% 5%;
-  height: 90%;
-  width: 90%;
-  background-color: rgba(51, 51, 51, 0);
-  text-align: left;  
-}
-}
-@media only screen and (min-width: 600px) and (max-width: 1199px)  {
-  .column{
+@media only screen and (min-width: 600px) and (max-width: 1199px) {
+  .column {
     display: flex;
     width: 100%;
     justify-content: space-evenly;
