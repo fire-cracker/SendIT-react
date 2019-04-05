@@ -30,13 +30,13 @@ class Login extends Component {
   onPasswordBlur = () => {
     const { password } = this.state;
 
-    if (!password) {
+    if (!password.trim()) {
       return this.setState({
         passwordErrorMessage: 'Please enter your password.'
       });
     }
 
-    if (!isAlphanumeric(password)) {
+    if (!isAlphanumeric(password.trim())) {
       return this.setState({
         passwordErrorMessage: 'Use numbers and letters for password.'
       });
@@ -52,13 +52,13 @@ class Login extends Component {
   onEmailBlur = () => {
     const { email } = this.state;
 
-    if (!email) {
+    if (!email.trim()) {
       return this.setState({
         emailErrorMessage: 'Please enter your email.'
       });
     }
 
-    if (!isEmail(email)) {
+    if (!isEmail(email.trim())) {
       return this.setState({
         emailErrorMessage: 'email is invalid.'
       });

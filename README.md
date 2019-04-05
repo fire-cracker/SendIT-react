@@ -13,11 +13,12 @@
 * [API End Points](#API-End-Points)
 * [Known Issues](#Known-issues)
 * [Installation](#Installation)
+* [Testing the app](#Testing-the-app)
 * [Contributing](#contributing)
 * [License](#License)
 
 ## Project Overview
-**SendIT** is a courier service that helps users deliver parcels to different destinations. SendIT  provides courier quotes based on weight categories. it was built from scratch using `Html` , `Css` , `JavaScript` and `Node.js`
+**SendIT** is a courier service that helps users deliver parcels to different destinations. SendIT  provides courier quotes based on weight categories. it was built from scratch using `Html` , `Css` , `react` and `Node.js`
 
 ## Features
 
@@ -33,14 +34,12 @@
 
 ## Demo
 
-Visit [User Dashboard](https://oyedejipeace.github.io/SendIT/UI)
-
-Visit [Admin Dashboard](https://oyedejipeace.github.io/SendIT/UI/admin.html)
+Visit [Repo on Github](https://github.com/oyedejipeace/SendIT-react)
 
 ## Built with
 - `HTML 5`
 - `CSS`
-- `JavaScript`
+- `react`
 - `Node.js`
 - `Express framework`
 
@@ -65,27 +64,32 @@ Visit [Admin Dashboard](https://oyedejipeace.github.io/SendIT/UI/admin.html)
  
  ## Known issues
 Everything works as expected; However:
-- the front-end is not complete, i.e. no authentication, few client-side
-   validation and no link for API calls yet.
 - Data structures were used to save data instead of a database, hence data gets
    erased once the server is restarted
 
 ## Installation
 
-- $ git clone `https://github.com/oyedejipeace/SendIT.git`
-- $ cd SendIT
+- $ git clone `https://github.com/oyedejipeace/SendIT-react.git`
+- $ cd SendIT-react
 - $ npm i , to install dependencies
 - $ npm start, to start the server
 Once the server starts-up, you can query the api at `http://localhost:5000/api/v1` using the end points stated above.
 
+## Testing the app
+
+- $ git clone `https://github.com/oyedejipeace/SendIT-react.git`
+- $ cd SendIT-react
+- $ npm i , to install dependencies
+- $ npm test, to test the app
+
 ## Contributing
 >  Feel free to 🍴 fork this repository
 
->  👯 Clone this repository to your local machine using `https://github.com/oyedejipeace/SendIT.git`
+>  👯 Clone this repository to your local machine using `https://github.com/oyedejipeace/SendIT-react.git`
 
 > Make Contributions
 
-> 🔃 Create a new pull request using `https://github.com/oyedejipeace/SendIT./compare`
+> 🔃 Create a new pull request using `https://github.com/oyedejipeace/SendIT-react./compare`
 
 ## License
 ![GitHub](https://img.shields.io/github/license/mashape/apistatus.svg)
