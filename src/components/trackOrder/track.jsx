@@ -141,33 +141,35 @@ export class GetUserOrders extends Component {
               >
                 { orderEntries.length
                   ? (
-                    <table>
-                      <thead>
-                        <tr>
-                          <th>Pickup Location</th>
-                          <th>Destination</th>
-                          <th>weight(kg)</th>
-                          <th>Price</th>
-                          <th>Date of Order</th>
-                          <th>Status</th>
-                          {showPending ? null : (<th>PresentLocation</th>)}
-                          {cancelSymbol ? null : (<th>Cancel</th>)}
-                          {cancelSymbol ? null : (<th>Change Destination</th>)}
-                        </tr>
+                    <div className="order-table">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Pickup Location</th>
+                            <th>Destination</th>
+                            <th>weight(kg)</th>
+                            <th>Price</th>
+                            <th>Date of Order</th>
+                            <th>Status</th>
+                            {showPending ? null : (<th>PresentLocation</th>)}
+                            {cancelSymbol ? null : (<th>Cancel</th>)}
+                            {cancelSymbol ? null : (<th>Change Destination</th>)}
+                          </tr>
 
-                        <OrderEntries
-                          cancelSymbol={cancelSymbol}
-                          showInput={showInput}
-                          showPending={showPending}
-                          orders={orderEntries}
-                          onClickCancel={parcelId => this.onClickCancel(parcelId)}
-                          onClickEdit={this.onClickEdit}
-                          onClickSubmit={parcelId => this.onClickSubmit(parcelId)}
-                          onChangeDestination={this.onChangeDestination}
-                        />
+                          <OrderEntries
+                            cancelSymbol={cancelSymbol}
+                            showInput={showInput}
+                            showPending={showPending}
+                            orders={orderEntries}
+                            onClickCancel={parcelId => this.onClickCancel(parcelId)}
+                            onClickEdit={this.onClickEdit}
+                            onClickSubmit={parcelId => this.onClickSubmit(parcelId)}
+                            onChangeDestination={this.onChangeDestination}
+                          />
 
-                      </thead>
-                    </table>
+                        </thead>
+                      </table>
+                    </div>
                   )
                   : (
                     <p className="no__order">No Order</p>

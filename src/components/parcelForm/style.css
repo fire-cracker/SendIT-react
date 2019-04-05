@@ -28,7 +28,7 @@
 
 .fromform{
   margin:auto;
-  width: 20%;
+  width: 60%;
   overflow: auto;
   padding: 18px 4% 20px 4%;
   border: 1px solid #888;
@@ -73,13 +73,17 @@ input[type=number]::-webkit-outer-spin-button {
 }
 .createShipmentButton>button {
   padding: 1% 3%;
-  margin: 0% 0% 1% 80%;
   border-radius: 10px;
   font-size: 120%;
+  float: right;
   }
  /* For desktop: */
  @media only screen and (min-width: 768px) {
-  .fromform{
+  /* .fromform{
      width: 40%;
+  } */
+  .fromform{
+    margin:auto;
+    width: 35%;
   }
 }

@@ -30,8 +30,6 @@
   color: #f2f2f2;
   text-align: center;
   padding: 8px;
-  text-decoration: none;
-  /* background-color: #333; */
   font-size: 14px;
   height: 18px;
 }
@@ -53,8 +51,10 @@
 }
 
 .blink {
-  margin:0px 0px 0px 10px;
+  margin: 0px 0px 0px 10px;
   font-family: "Sofia";
+  color: white;
+  line-height: 2rem;
 }
 
 .blink_caption {
@@ -82,7 +82,7 @@
   cursor: pointer;
 }
 
-#active {
+.active {
   text-decoration: underline;
 }
 
@@ -98,15 +98,18 @@
     top: 0;
 }
 .navigation.responsive a {
-    float: none;
-    display: block;
-    text-align: left;
+  float: none;
+  display: block;
+  text-align: left;
+  font-size: 1rem;
+  line-height: 3rem;
+  padding-top: 1rem;
 }
 /* For desktop: */
 @media only screen and (min-width: 768px) {
   #admin,
   #track,
-  #active,
+  #create__order,
   #home,
   #profile,
   #signOut,
@@ -133,9 +136,9 @@
   color: #f2f2f2;
   text-align: center;
   padding: 8px;
-  text-decoration: none;
   font-size: 14px;
   height: 18px;
+  line-height: 1rem;
 }
 
 .responsive--navBar {

@@ -12,7 +12,7 @@ exports[`Tests for the Profile Page Should render the Profile page 1`] = `
         "entries": Array [
           Object {
             "hash": "",
-            "key": "frj8te",
+            "key": "3j3pss",
             "pathname": "/",
             "search": "",
             "state": undefined,
@@ -26,7 +26,7 @@ exports[`Tests for the Profile Page Should render the Profile page 1`] = `
         "listen": [Function],
         "location": Object {
           "hash": "",
-          "key": "frj8te",
+          "key": "3j3pss",
           "pathname": "/",
           "search": "",
           "state": undefined,
@@ -118,58 +118,124 @@ exports[`Tests for the Profile Page Should render the Profile page 1`] = `
                     className="navigation"
                     id="navigation"
                   >
-                    <Link
+                    <NavLink
+                      activeClassName="active"
+                      aria-current="page"
+                      className="logout"
                       id="logout"
-                      replace={false}
                       to="/"
                     >
-                      <a
-                        href="/"
-                        id="logout"
-                        onClick={[Function]}
+                      <Route
+                        path="\\\\/"
                       >
-                        Logout
-                      </a>
-                    </Link>
-                    <Link
+                        <Link
+                          aria-current="page"
+                          className="logout active"
+                          id="logout"
+                          replace={false}
+                          style={Object {}}
+                          to="/"
+                        >
+                          <a
+                            aria-current="page"
+                            className="logout active"
+                            href="/"
+                            id="logout"
+                            onClick={[Function]}
+                            style={Object {}}
+                          >
+                            Logout
+                          </a>
+                        </Link>
+                      </Route>
+                    </NavLink>
+                    <NavLink
+                      activeClassName="active"
+                      aria-current="page"
+                      className="prefile"
                       id="profile"
-                      replace={false}
                       to="/profile"
                     >
-                      <a
-                        href="/profile"
-                        id="profile"
-                        onClick={[Function]}
+                      <Route
+                        path="\\\\/profile"
                       >
-                        Profile
-                      </a>
-                    </Link>
-                    <Link
-                      id="active"
-                      replace={false}
+                        <Link
+                          aria-current={null}
+                          className="prefile"
+                          id="profile"
+                          replace={false}
+                          to="/profile"
+                        >
+                          <a
+                            aria-current={null}
+                            className="prefile"
+                            href="/profile"
+                            id="profile"
+                            onClick={[Function]}
+                          >
+                            Profile
+                          </a>
+                        </Link>
+                      </Route>
+                    </NavLink>
+                    <NavLink
+                      activeClassName="active"
+                      aria-current="page"
+                      className="create__order"
+                      id="create__order"
                       to="/createOrder"
                     >
-                      <a
-                        href="/createOrder"
-                        id="active"
-                        onClick={[Function]}
+                      <Route
+                        path="\\\\/createOrder"
                       >
-                        Create Order
-                      </a>
-                    </Link>
-                    <Link
+                        <Link
+                          aria-current={null}
+                          className="create__order"
+                          id="create__order"
+                          replace={false}
+                          to="/createOrder"
+                        >
+                          <a
+                            aria-current={null}
+                            className="create__order"
+                            href="/createOrder"
+                            id="create__order"
+                            onClick={[Function]}
+                          >
+                            Create Order
+                          </a>
+                        </Link>
+                      </Route>
+                    </NavLink>
+                    <NavLink
+                      activeClassName="active"
+                      aria-current="page"
+                      className="track"
                       id="track"
-                      replace={false}
                       to="/track"
                     >
-                      <a
-                        href="/track"
-                        id="track"
-                        onClick={[Function]}
+                      <Route
+                        path="\\\\/track"
                       >
-                        Track
-                      </a>
-                    </Link>
+                        <Link
+                          aria-current={null}
+                          className="track"
+                          id="track"
+                          replace={false}
+                          to="/track"
+                        >
+                          <a
+                            aria-current={null}
+                            className="track"
+                            href="/track"
+                            id="track"
+                            onClick={[Function]}
+                          >
+                            Track
+                          </a>
+                        </Link>
+                      </Route>
+                    </NavLink>
                     <a
                       className="icon"
                       id="icon"

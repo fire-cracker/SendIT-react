@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
 import './style.css';
@@ -25,30 +25,34 @@ render() {
         <div id="headerContent">
 
           <div className={showLogin ? 'navigation' : 'navigation responsive'} id="navigation">
-            <Link
+            <NavLink
+              className="logout"
               id="logout"
               to="/"
             >
               Logout
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
+              className="prefile"
               id="profile"
               to="/profile"
             >
              Profile
-            </Link>
-            <Link
-              id="active"
+            </NavLink>
+            <NavLink
+              className="create__order"
+              id="create__order"
               to="/createOrder"
             >
             Create Order
-            </Link>
-            <Link
+            </NavLink>
+            <NavLink
+              className="track"
               id="track"
               to="/track"
             >
             Track
-            </Link>
+            </NavLink>
             <a
               className="icon"
               id="icon"
