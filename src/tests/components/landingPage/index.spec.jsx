@@ -211,13 +211,13 @@ describe('Tests for the signup Page', () => {
       target: { value: 'oyedeji gh' }
     });
     wrapper.find('input').at(0).simulate('blur');
-    expect(wrapper.state('usernameErrorMessage')).toBe('Use numbers and letters for password.');
+    expect(wrapper.state('usernameErrorMessage')).toBe('Use numbers and letters for username.');
 
     wrapper.find('input').at(0).simulate('change', {
       target: { value: 'nj' && 'oyedejipeaceoyededddndkd' }
     });
     wrapper.find('input').at(0).simulate('blur');
-    expect(wrapper.state('usernameErrorMessage')).toBe('Password must between 8 and 15 characters.');
+    expect(wrapper.state('usernameErrorMessage')).toBe('username must between 8 and 15 characters.');
 
     wrapper.find('input').at(1).simulate('change', {
       target: { value: '' }
